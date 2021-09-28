@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g7w-dI-DGm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HyperBidSDKDemo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-x4-7Sn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VPe-la-tWj">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="893"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7Z-WX-M2h" userLabel="Splash">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpo-6t-qY6" userLabel="SplashTextField">
+                                                <rect key="frame" x="0.0" y="45" width="414" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUX-AO-2RH" userLabel="SplashButton">
+                                                <rect key="frame" x="0.0" y="89" width="414" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <state key="normal" title="Choose"/>
+                                                <connections>
+                                                    <action selector="splashChooseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Tv-SS-9Fh"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interstitial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY3-HW-Llp" userLabel="Interstitial">
+                                                <rect key="frame" x="0.0" y="129" width="414" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sGi-oT-YRx" userLabel="InterstitialTextField">
+                                                <rect key="frame" x="0.0" y="174" width="414" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2j-LX-pir" userLabel="InterstitialButton">
+                                                <rect key="frame" x="0.0" y="218" width="414" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <state key="normal" title="Choose"/>
+                                                <connections>
+                                                    <action selector="interstitialChooseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wHZ-sq-qwk"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY3-9Y-9c0" userLabel="Banner">
+                                                <rect key="frame" x="0.0" y="258" width="414" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bok-Ag-JbV" userLabel="BannerTextField">
+                                                <rect key="frame" x="0.0" y="303" width="414" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrb-WA-kGU" userLabel="BannerButton">
+                                                <rect key="frame" x="0.0" y="347" width="414" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <state key="normal" title="Choose"/>
+                                                <connections>
+                                                    <action selector="bannerChooseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afr-zT-sO3"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewarded Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPT-4r-hgJ" userLabel="RV">
+                                                <rect key="frame" x="0.0" y="387" width="414" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3O2-dU-C8T" userLabel="RVTextField">
+                                                <rect key="frame" x="0.0" y="432" width="414" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brx-45-A4W" userLabel="RVButton">
+                                                <rect key="frame" x="0.0" y="476" width="414" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <state key="normal" title="Choose"/>
+                                                <connections>
+                                                    <action selector="rvChooseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jjG-PH-Nmu"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Native" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vek-tg-1Tx" userLabel="Native">
+                                                <rect key="frame" x="0.0" y="516" width="414" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaQ-Gi-2xE" userLabel="NativeTextField">
+                                                <rect key="frame" x="0.0" y="561" width="414" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPt-lJ-p30" userLabel="NativeButton">
+                                                <rect key="frame" x="0.0" y="605" width="414" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <state key="normal" title="Choose"/>
+                                                <connections>
+                                                    <action selector="nativeChooseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SyE-Qm-NhN"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Native Banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrs-D5-GYs" userLabel="NativeBanner">
+                                                <rect key="frame" x="0.0" y="645" width="414" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vff-VQ-zsa" userLabel="NativeBannerTextField">
+                                                <rect key="frame" x="0.0" y="690" width="414" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdT-ji-tDt" userLabel="NativeBannerButton">
+                                                <rect key="frame" x="0.0" y="734" width="414" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <state key="normal" title="Choose"/>
+                                                <connections>
+                                                    <action selector="nativeBannerChooseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xmD-ld-nHE"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Native Splash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uod-mN-lFX" userLabel="NativeSplash">
+                                                <rect key="frame" x="0.0" y="774" width="414" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4u-YK-wTS" userLabel="NativeSplashTextField">
+                                                <rect key="frame" x="0.0" y="819" width="414" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQP-oR-Gkv" userLabel="NativeSplashButton">
+                                                <rect key="frame" x="0.0" y="863" width="414" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <state key="normal" title="Choose"/>
+                                                <connections>
+                                                    <action selector="nativeSplashChooseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BB6-fd-OlD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VPe-la-tWj" firstAttribute="bottom" secondItem="L6w-qO-fgU" secondAttribute="bottom" id="2R7-96-2vi"/>
+                                    <constraint firstItem="VPe-la-tWj" firstAttribute="width" secondItem="xiz-ys-Jwe" secondAttribute="width" id="Aa1-GZ-hJo"/>
+                                    <constraint firstItem="VPe-la-tWj" firstAttribute="top" secondItem="L6w-qO-fgU" secondAttribute="top" id="IcK-Rx-5U2"/>
+                                    <constraint firstItem="VPe-la-tWj" firstAttribute="trailing" secondItem="L6w-qO-fgU" secondAttribute="trailing" id="eTB-R1-5kV"/>
+                                    <constraint firstItem="VPe-la-tWj" firstAttribute="leading" secondItem="L6w-qO-fgU" secondAttribute="leading" id="x91-hz-lUo"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="L6w-qO-fgU"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="xiz-ys-Jwe"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZzG-x4-7Sn" secondAttribute="bottom" id="XYj-Sc-Kev"/>
+                            <constraint firstItem="ZzG-x4-7Sn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aKh-4j-xyr"/>
+                            <constraint firstItem="ZzG-x4-7Sn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iUl-N4-VL6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZzG-x4-7Sn" secondAttribute="trailing" id="ky2-3K-NX3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="HyperBidSDKDemo" id="8g5-YM-1qK"/>
+                    <connections>
+                        <outlet property="bannerTextField" destination="Bok-Ag-JbV" id="Svo-mZ-KIC"/>
+                        <outlet property="interstitialTextField" destination="sGi-oT-YRx" id="3na-7F-pf1"/>
+                        <outlet property="nativeBannerTextField" destination="vff-VQ-zsa" id="r8a-Z8-5z6"/>
+                        <outlet property="nativeSplashTextField" destination="f4u-YK-wTS" id="ecP-TK-j3S"/>
+                        <outlet property="nativeTextField" destination="jaQ-Gi-2xE" id="ubf-NW-tso"/>
+                        <outlet property="rvTextField" destination="3O2-dU-C8T" id="m4t-a2-jpT"/>
+                        <outlet property="splashTextField" destination="cpo-6t-qY6" id="iJK-qJ-ssd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="138.61607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fpy-xK-w7A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g7w-dI-DGm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8HX-mA-9rx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7mr-dM-Yg6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXr-Sq-qPc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,921 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52C3BB4826F9DB1A00A52BB8 /* HBSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2A26F9DB1800A52BB8 /* HBSplashViewController.m */; };
+		52C3BB4A26F9DB1A00A52BB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2D26F9DB1800A52BB8 /* ViewController.m */; };
+		52C3BB4B26F9DB1A00A52BB8 /* HyperBidAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2E26F9DB1800A52BB8 /* HyperBidAdManager.m */; };
+		52C3BB4C26F9DB1A00A52BB8 /* HBRewardedVideoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2F26F9DB1800A52BB8 /* HBRewardedVideoVideoViewController.m */; };
+		52C3BB4D26F9DB1A00A52BB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3026F9DB1800A52BB8 /* main.m */; };
+		52C3BB4E26F9DB1A00A52BB8 /* HBWebAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3126F9DB1800A52BB8 /* HBWebAction.swift */; };
+		52C3BB4F26F9DB1A00A52BB8 /* HBDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3326F9DB1800A52BB8 /* HBDrawViewController.m */; };
+		52C3BB5026F9DB1A00A52BB8 /* HBNativeBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3426F9DB1800A52BB8 /* HBNativeBannerViewController.m */; };
+		52C3BB5126F9DB1A00A52BB8 /* HBInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3B26F9DB1900A52BB8 /* HBInterstitialViewController.m */; };
+		52C3BB5226F9DB1A00A52BB8 /* HBBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3D26F9DB1900A52BB8 /* HBBannerViewController.m */; };
+		52C3BB5326F9DB1A00A52BB8 /* HBNativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3E26F9DB1900A52BB8 /* HBNativeViewController.m */; };
+		52C3BB5426F9DB1A00A52BB8 /* SimpleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB4126F9DB1900A52BB8 /* SimpleWebViewController.swift */; };
+		52C3BB5526F9DB1A00A52BB8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB4326F9DB1900A52BB8 /* SceneDelegate.m */; };
+		52C3BB5626F9DB1A00A52BB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB4626F9DB1A00A52BB8 /* AppDelegate.m */; };
+		52C3BB5726F9DB1A00A52BB8 /* MTAutolayoutCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB4726F9DB1A00A52BB8 /* MTAutolayoutCategories.m */; };
+		52C3BB5926FA078600A52BB8 /* Pods_hyperbid_ios_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC4C86C0DE72EB91108F5FB /* Pods_hyperbid_ios_demo.framework */; };
+		52C3BB6026FA18B300A52BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C3BB5C26FA18B300A52BB8 /* Main.storyboard */; };
+		52C3BB6126FA18B300A52BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C3BB5E26FA18B300A52BB8 /* LaunchScreen.storyboard */; };
+		52E3828826CF8D1800E75555 /* hyperbid_ios_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3828726CF8D1800E75555 /* hyperbid_ios_demoTests.m */; };
+		52E3829326CF8D1800E75555 /* hyperbid_ios_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3829226CF8D1800E75555 /* hyperbid_ios_demoUITests.m */; };
+		52F6A56C26D38CE800AA18DB /* Adjust in Resources */ = {isa = PBXBuildFile; fileRef = 52F6A55426D38CE700AA18DB /* Adjust */; };
+		6C98132B8943D54729475C42 /* Pods_hyperbid_ios_demoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E05394735F53EF7BE0733A9 /* Pods_hyperbid_ios_demoTests.framework */; };
+		A712F8FD9A0EF4492B0229BC /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE32A6D0D83D0ABB17E8CC10 /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52E3828426CF8D1800E75555 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52E3826026CF8D1500E75555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52E3826726CF8D1500E75555;
+			remoteInfo = hyperbid_ios_demo;
+		};
+		52E3828F26CF8D1800E75555 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52E3826026CF8D1500E75555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52E3826726CF8D1500E75555;
+			remoteInfo = hyperbid_ios_demo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27DCA4E8B0C48F925D5C97F0 /* Pods-hyperbid_ios_demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demoTests.release.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demoTests/Pods-hyperbid_ios_demoTests.release.xcconfig"; sourceTree = "<group>"; };
+		2E05394735F53EF7BE0733A9 /* Pods_hyperbid_ios_demoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hyperbid_ios_demoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C3BB2A26F9DB1800A52BB8 /* HBSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSplashViewController.m; sourceTree = "<group>"; };
+		52C3BB2B26F9DB1800A52BB8 /* hyperbid_ios_demo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hyperbid_ios_demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		52C3BB2D26F9DB1800A52BB8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		52C3BB2E26F9DB1800A52BB8 /* HyperBidAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyperBidAdManager.m; sourceTree = "<group>"; };
+		52C3BB2F26F9DB1800A52BB8 /* HBRewardedVideoVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBRewardedVideoVideoViewController.m; sourceTree = "<group>"; };
+		52C3BB3026F9DB1800A52BB8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		52C3BB3126F9DB1800A52BB8 /* HBWebAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBWebAction.swift; sourceTree = "<group>"; };
+		52C3BB3226F9DB1800A52BB8 /* HBBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBannerViewController.h; sourceTree = "<group>"; };
+		52C3BB3326F9DB1800A52BB8 /* HBDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBDrawViewController.m; sourceTree = "<group>"; };
+		52C3BB3426F9DB1800A52BB8 /* HBNativeBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBNativeBannerViewController.m; sourceTree = "<group>"; };
+		52C3BB3526F9DB1900A52BB8 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		52C3BB3626F9DB1900A52BB8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		52C3BB3726F9DB1900A52BB8 /* HBRewardedVideoVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBRewardedVideoVideoViewController.h; sourceTree = "<group>"; };
+		52C3BB3826F9DB1900A52BB8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		52C3BB3926F9DB1900A52BB8 /* HBDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBDrawViewController.h; sourceTree = "<group>"; };
+		52C3BB3A26F9DB1900A52BB8 /* HBNativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBNativeViewController.h; sourceTree = "<group>"; };
+		52C3BB3B26F9DB1900A52BB8 /* HBInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBInterstitialViewController.m; sourceTree = "<group>"; };
+		52C3BB3C26F9DB1900A52BB8 /* HyperBidAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperBidAdManager.h; sourceTree = "<group>"; };
+		52C3BB3D26F9DB1900A52BB8 /* HBBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBannerViewController.m; sourceTree = "<group>"; };
+		52C3BB3E26F9DB1900A52BB8 /* HBNativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBNativeViewController.m; sourceTree = "<group>"; };
+		52C3BB3F26F9DB1900A52BB8 /* HBNativeBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBNativeBannerViewController.h; sourceTree = "<group>"; };
+		52C3BB4026F9DB1900A52BB8 /* HBSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSplashViewController.h; sourceTree = "<group>"; };
+		52C3BB4126F9DB1900A52BB8 /* SimpleWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleWebViewController.swift; sourceTree = "<group>"; };
+		52C3BB4226F9DB1900A52BB8 /* MTAutolayoutCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAutolayoutCategories.h; sourceTree = "<group>"; };
+		52C3BB4326F9DB1900A52BB8 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		52C3BB4426F9DB1A00A52BB8 /* HBInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBInterstitialViewController.h; sourceTree = "<group>"; };
+		52C3BB4526F9DB1A00A52BB8 /* HyperBidSDKDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HyperBidSDKDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		52C3BB4626F9DB1A00A52BB8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		52C3BB4726F9DB1A00A52BB8 /* MTAutolayoutCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTAutolayoutCategories.m; sourceTree = "<group>"; };
+		52C3BB5826F9DBEE00A52BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C3BB5D26FA18B300A52BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52C3BB5F26FA18B300A52BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52E3826826CF8D1500E75555 /* hyperbid_ios_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hyperbid_ios_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E3828326CF8D1800E75555 /* hyperbid_ios_demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hyperbid_ios_demoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E3828726CF8D1800E75555 /* hyperbid_ios_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hyperbid_ios_demoTests.m; sourceTree = "<group>"; };
+		52E3828926CF8D1800E75555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E3828E26CF8D1800E75555 /* hyperbid_ios_demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hyperbid_ios_demoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E3829226CF8D1800E75555 /* hyperbid_ios_demoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hyperbid_ios_demoUITests.m; sourceTree = "<group>"; };
+		52E3829426CF8D1800E75555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		751EAC25BB6D88F550457937 /* Pods-hyperbid_ios_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demo.debug.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demo/Pods-hyperbid_ios_demo.debug.xcconfig"; sourceTree = "<group>"; };
+		77235CD0ED3E03FA38FC1A30 /* Pods-hyperbid_ios_demoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demoTests.debug.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demoTests/Pods-hyperbid_ios_demoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8AC4C86C0DE72EB91108F5FB /* Pods_hyperbid_ios_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hyperbid_ios_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C45BFF48AA3763E84F638A46 /* Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.release.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE32A6D0D83D0ABB17E8CC10 /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2B5D230B71EF987AC75B317 /* Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.debug.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52E3826526CF8D1500E75555 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C3BB5926FA078600A52BB8 /* Pods_hyperbid_ios_demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E3828026CF8D1800E75555 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C98132B8943D54729475C42 /* Pods_hyperbid_ios_demoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E3828B26CF8D1800E75555 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A712F8FD9A0EF4492B0229BC /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B767432508C33A806CC315B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				751EAC25BB6D88F550457937 /* Pods-hyperbid_ios_demo.debug.xcconfig */,
+				64B409B88AD38B7F4F23D690 /* Pods-hyperbid_ios_demo.release.xcconfig */,
+				D2B5D230B71EF987AC75B317 /* Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.debug.xcconfig */,
+				C45BFF48AA3763E84F638A46 /* Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.release.xcconfig */,
+				77235CD0ED3E03FA38FC1A30 /* Pods-hyperbid_ios_demoTests.debug.xcconfig */,
+				27DCA4E8B0C48F925D5C97F0 /* Pods-hyperbid_ios_demoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		529142A7DE33CFF102A3CFCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AC4C86C0DE72EB91108F5FB /* Pods_hyperbid_ios_demo.framework */,
+				CE32A6D0D83D0ABB17E8CC10 /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework */,
+				2E05394735F53EF7BE0733A9 /* Pods_hyperbid_ios_demoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52E3825F26CF8D1500E75555 = {
+			isa = PBXGroup;
+			children = (
+				52E3826A26CF8D1500E75555 /* hyperbid_ios_demo */,
+				52E3828626CF8D1800E75555 /* hyperbid_ios_demoTests */,
+				52E3829126CF8D1800E75555 /* hyperbid_ios_demoUITests */,
+				52E3826926CF8D1500E75555 /* Products */,
+				1B767432508C33A806CC315B /* Pods */,
+				529142A7DE33CFF102A3CFCF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52E3826926CF8D1500E75555 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52E3826826CF8D1500E75555 /* hyperbid_ios_demo.app */,
+				52E3828326CF8D1800E75555 /* hyperbid_ios_demoTests.xctest */,
+				52E3828E26CF8D1800E75555 /* hyperbid_ios_demoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52E3826A26CF8D1500E75555 /* hyperbid_ios_demo */ = {
+			isa = PBXGroup;
+			children = (
+				52C3BB5E26FA18B300A52BB8 /* LaunchScreen.storyboard */,
+				52C3BB5C26FA18B300A52BB8 /* Main.storyboard */,
+				52C3BB5826F9DBEE00A52BB8 /* Info.plist */,
+				52C3BB3626F9DB1900A52BB8 /* AppDelegate.h */,
+				52C3BB4626F9DB1A00A52BB8 /* AppDelegate.m */,
+				52C3BB3226F9DB1800A52BB8 /* HBBannerViewController.h */,
+				52C3BB3D26F9DB1900A52BB8 /* HBBannerViewController.m */,
+				52C3BB3926F9DB1900A52BB8 /* HBDrawViewController.h */,
+				52C3BB3326F9DB1800A52BB8 /* HBDrawViewController.m */,
+				52C3BB4426F9DB1A00A52BB8 /* HBInterstitialViewController.h */,
+				52C3BB3B26F9DB1900A52BB8 /* HBInterstitialViewController.m */,
+				52C3BB3F26F9DB1900A52BB8 /* HBNativeBannerViewController.h */,
+				52C3BB3426F9DB1800A52BB8 /* HBNativeBannerViewController.m */,
+				52C3BB3A26F9DB1900A52BB8 /* HBNativeViewController.h */,
+				52C3BB3E26F9DB1900A52BB8 /* HBNativeViewController.m */,
+				52C3BB3726F9DB1900A52BB8 /* HBRewardedVideoVideoViewController.h */,
+				52C3BB2F26F9DB1800A52BB8 /* HBRewardedVideoVideoViewController.m */,
+				52C3BB4026F9DB1900A52BB8 /* HBSplashViewController.h */,
+				52C3BB2A26F9DB1800A52BB8 /* HBSplashViewController.m */,
+				52C3BB3126F9DB1800A52BB8 /* HBWebAction.swift */,
+				52C3BB2B26F9DB1800A52BB8 /* hyperbid_ios_demo-Bridging-Header.h */,
+				52C3BB3C26F9DB1900A52BB8 /* HyperBidAdManager.h */,
+				52C3BB2E26F9DB1800A52BB8 /* HyperBidAdManager.m */,
+				52C3BB4526F9DB1A00A52BB8 /* HyperBidSDKDemo-Bridging-Header.h */,
+				52C3BB3026F9DB1800A52BB8 /* main.m */,
+				52C3BB4226F9DB1900A52BB8 /* MTAutolayoutCategories.h */,
+				52C3BB4726F9DB1A00A52BB8 /* MTAutolayoutCategories.m */,
+				52C3BB3526F9DB1900A52BB8 /* SceneDelegate.h */,
+				52C3BB4326F9DB1900A52BB8 /* SceneDelegate.m */,
+				52C3BB4126F9DB1900A52BB8 /* SimpleWebViewController.swift */,
+				52C3BB3826F9DB1900A52BB8 /* ViewController.h */,
+				52C3BB2D26F9DB1800A52BB8 /* ViewController.m */,
+				52F6A55426D38CE700AA18DB /* Adjust */,
+			);
+			path = hyperbid_ios_demo;
+			sourceTree = "<group>";
+		};
+		52E3828626CF8D1800E75555 /* hyperbid_ios_demoTests */ = {
+			isa = PBXGroup;
+			children = (
+				52E3828726CF8D1800E75555 /* hyperbid_ios_demoTests.m */,
+				52E3828926CF8D1800E75555 /* Info.plist */,
+			);
+			path = hyperbid_ios_demoTests;
+			sourceTree = "<group>";
+		};
+		52E3829126CF8D1800E75555 /* hyperbid_ios_demoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52E3829226CF8D1800E75555 /* hyperbid_ios_demoUITests.m */,
+				52E3829426CF8D1800E75555 /* Info.plist */,
+			);
+			path = hyperbid_ios_demoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52E3826726CF8D1500E75555 /* hyperbid_ios_demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E3829726CF8D1800E75555 /* Build configuration list for PBXNativeTarget "hyperbid_ios_demo" */;
+			buildPhases = (
+				2C55FCADCF161B6F197AB01A /* [CP] Check Pods Manifest.lock */,
+				52E3826426CF8D1500E75555 /* Sources */,
+				52E3826526CF8D1500E75555 /* Frameworks */,
+				52E3826626CF8D1500E75555 /* Resources */,
+				C308EF1B5B940623C4C75AD5 /* [CP] Embed Pods Frameworks */,
+				1F994BF0A2A65ADC22965572 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hyperbid_ios_demo;
+			productName = hyperbid_ios_demo;
+			productReference = 52E3826826CF8D1500E75555 /* hyperbid_ios_demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52E3828226CF8D1800E75555 /* hyperbid_ios_demoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E3829A26CF8D1800E75555 /* Build configuration list for PBXNativeTarget "hyperbid_ios_demoTests" */;
+			buildPhases = (
+				D260A05812B19A10145507FA /* [CP] Check Pods Manifest.lock */,
+				52E3827F26CF8D1800E75555 /* Sources */,
+				52E3828026CF8D1800E75555 /* Frameworks */,
+				52E3828126CF8D1800E75555 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52E3828526CF8D1800E75555 /* PBXTargetDependency */,
+			);
+			name = hyperbid_ios_demoTests;
+			productName = hyperbid_ios_demoTests;
+			productReference = 52E3828326CF8D1800E75555 /* hyperbid_ios_demoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52E3828D26CF8D1800E75555 /* hyperbid_ios_demoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E3829D26CF8D1800E75555 /* Build configuration list for PBXNativeTarget "hyperbid_ios_demoUITests" */;
+			buildPhases = (
+				E44CB8DC35516AF6016FC0BA /* [CP] Check Pods Manifest.lock */,
+				52E3828A26CF8D1800E75555 /* Sources */,
+				52E3828B26CF8D1800E75555 /* Frameworks */,
+				52E3828C26CF8D1800E75555 /* Resources */,
+				9C55E775088F2D0B95D3827B /* [CP] Embed Pods Frameworks */,
+				A8C77CEB24F9BF1723F89120 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52E3829026CF8D1800E75555 /* PBXTargetDependency */,
+			);
+			name = hyperbid_ios_demoUITests;
+			productName = hyperbid_ios_demoUITests;
+			productReference = 52E3828E26CF8D1800E75555 /* hyperbid_ios_demoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52E3826026CF8D1500E75555 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					52E3826726CF8D1500E75555 = {
+						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
+					};
+					52E3828226CF8D1800E75555 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 52E3826726CF8D1500E75555;
+					};
+					52E3828D26CF8D1800E75555 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 52E3826726CF8D1500E75555;
+					};
+				};
+			};
+			buildConfigurationList = 52E3826326CF8D1500E75555 /* Build configuration list for PBXProject "hyperbid_ios_demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52E3825F26CF8D1500E75555;
+			productRefGroup = 52E3826926CF8D1500E75555 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52E3826726CF8D1500E75555 /* hyperbid_ios_demo */,
+				52E3828226CF8D1800E75555 /* hyperbid_ios_demoTests */,
+				52E3828D26CF8D1800E75555 /* hyperbid_ios_demoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52E3826626CF8D1500E75555 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C3BB6126FA18B300A52BB8 /* LaunchScreen.storyboard in Resources */,
+				52F6A56C26D38CE800AA18DB /* Adjust in Resources */,
+				52C3BB6026FA18B300A52BB8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E3828126CF8D1800E75555 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E3828C26CF8D1800E75555 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F994BF0A2A65ADC22965572 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo/Pods-hyperbid_ios_demo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo/Pods-hyperbid_ios_demo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo/Pods-hyperbid_ios_demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C55FCADCF161B6F197AB01A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hyperbid_ios_demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C55E775088F2D0B95D3827B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8C77CEB24F9BF1723F89120 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C308EF1B5B940623C4C75AD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo/Pods-hyperbid_ios_demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo/Pods-hyperbid_ios_demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hyperbid_ios_demo/Pods-hyperbid_ios_demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D260A05812B19A10145507FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hyperbid_ios_demoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E44CB8DC35516AF6016FC0BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52E3826426CF8D1500E75555 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C3BB5226F9DB1A00A52BB8 /* HBBannerViewController.m in Sources */,
+				52C3BB4D26F9DB1A00A52BB8 /* main.m in Sources */,
+				52C3BB5526F9DB1A00A52BB8 /* SceneDelegate.m in Sources */,
+				52C3BB5126F9DB1A00A52BB8 /* HBInterstitialViewController.m in Sources */,
+				52C3BB5426F9DB1A00A52BB8 /* SimpleWebViewController.swift in Sources */,
+				52C3BB4C26F9DB1A00A52BB8 /* HBRewardedVideoVideoViewController.m in Sources */,
+				52C3BB5626F9DB1A00A52BB8 /* AppDelegate.m in Sources */,
+				52C3BB4E26F9DB1A00A52BB8 /* HBWebAction.swift in Sources */,
+				52C3BB4A26F9DB1A00A52BB8 /* ViewController.m in Sources */,
+				52C3BB4F26F9DB1A00A52BB8 /* HBDrawViewController.m in Sources */,
+				52C3BB5326F9DB1A00A52BB8 /* HBNativeViewController.m in Sources */,
+				52C3BB4B26F9DB1A00A52BB8 /* HyperBidAdManager.m in Sources */,
+				52C3BB4826F9DB1A00A52BB8 /* HBSplashViewController.m in Sources */,
+				52C3BB5026F9DB1A00A52BB8 /* HBNativeBannerViewController.m in Sources */,
+				52C3BB5726F9DB1A00A52BB8 /* MTAutolayoutCategories.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E3827F26CF8D1800E75555 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E3828826CF8D1800E75555 /* hyperbid_ios_demoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E3828A26CF8D1800E75555 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E3829326CF8D1800E75555 /* hyperbid_ios_demoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52E3828526CF8D1800E75555 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52E3826726CF8D1500E75555 /* hyperbid_ios_demo */;
+			targetProxy = 52E3828426CF8D1800E75555 /* PBXContainerItemProxy */;
+		};
+		52E3829026CF8D1800E75555 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52E3826726CF8D1500E75555 /* hyperbid_ios_demo */;
+			targetProxy = 52E3828F26CF8D1800E75555 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52C3BB5C26FA18B300A52BB8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52C3BB5D26FA18B300A52BB8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52C3BB5E26FA18B300A52BB8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52C3BB5F26FA18B300A52BB8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52E3829526CF8D1800E75555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"${PODS_ROOT}/Headers/**",
+				);
+			};
+			name = Debug;
+		};
+		52E3829626CF8D1800E75555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				USER_HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"${PODS_ROOT}/Headers/**",
+				);
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52E3829826CF8D1800E75555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 751EAC25BB6D88F550457937 /* Pods-hyperbid_ios_demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UG9NL374WX;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GDTMobSDK\"",
+					"$(SDKROOT)/usr/include/libxml2",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+					"\"${PODS_ROOT}/\"/**",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GDTMobSDK\"",
+					"$(SDKROOT)/usr/include/libxml2",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+					"\"${PODS_ROOT}/BuildHeaders\"",
+				);
+				INFOPLIST_FILE = hyperbid_ios_demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbid.demoUnity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "hyperbid_ios_demo/hyperbid_ios_demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52E3829926CF8D1800E75555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64B409B88AD38B7F4F23D690 /* Pods-hyperbid_ios_demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UG9NL374WX;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GDTMobSDK\"",
+					"$(SDKROOT)/usr/include/libxml2",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+					"\"${PODS_ROOT}/\"/**",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GDTMobSDK\"",
+					"$(SDKROOT)/usr/include/libxml2",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+					"\"${PODS_ROOT}/\"/**",
+					"\"${PODS_ROOT}/BuildHeaders\"/**",
+				);
+				INFOPLIST_FILE = hyperbid_ios_demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbid.demoUnity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "hyperbid_ios_demo/hyperbid_ios_demo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52E3829B26CF8D1800E75555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77235CD0ED3E03FA38FC1A30 /* Pods-hyperbid_ios_demoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = hyperbid_ios_demoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbid.demo.ios.hyperbid-ios-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hyperbid_ios_demo.app/hyperbid_ios_demo";
+			};
+			name = Debug;
+		};
+		52E3829C26CF8D1800E75555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27DCA4E8B0C48F925D5C97F0 /* Pods-hyperbid_ios_demoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = hyperbid_ios_demoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbid.demo.ios.hyperbid-ios-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hyperbid_ios_demo.app/hyperbid_ios_demo";
+			};
+			name = Release;
+		};
+		52E3829E26CF8D1800E75555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2B5D230B71EF987AC75B317 /* Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = hyperbid_ios_demoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbid.demo.ios.hyperbid-ios-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hyperbid_ios_demo;
+			};
+			name = Debug;
+		};
+		52E3829F26CF8D1800E75555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C45BFF48AA3763E84F638A46 /* Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = hyperbid_ios_demoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbid.demo.ios.hyperbid-ios-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hyperbid_ios_demo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52E3826326CF8D1500E75555 /* Build configuration list for PBXProject "hyperbid_ios_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E3829526CF8D1800E75555 /* Debug */,
+				52E3829626CF8D1800E75555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52E3829726CF8D1800E75555 /* Build configuration list for PBXNativeTarget "hyperbid_ios_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E3829826CF8D1800E75555 /* Debug */,
+				52E3829926CF8D1800E75555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52E3829A26CF8D1800E75555 /* Build configuration list for PBXNativeTarget "hyperbid_ios_demoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E3829B26CF8D1800E75555 /* Debug */,
+				52E3829C26CF8D1800E75555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52E3829D26CF8D1800E75555 /* Build configuration list for PBXNativeTarget "hyperbid_ios_demoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E3829E26CF8D1800E75555 /* Debug */,
+				52E3829F26CF8D1800E75555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52E3826026CF8D1500E75555 /* Project object */;
+}
