@@ -5,7 +5,7 @@
 <br/>
 <h1>iOS Support</h1>
 <p>HyperBid provides iOS support via the HyperBid iOS SDK written in Objective-C. You can find more info about it in the link below:</p>
-<li>documentation: <a href="https://docs.hyperbid.com/#/en-us/iOS">https://docs.hyperbid.com/#/en-us/iOS</a></li>
+<li>documentation: <a href="https://docs.hyperbid.com/#/en-us/ios/GetStarted/HyperBid_Get_Started">https://docs.hyperbid.com/#/en-us/ios/GetStarted/HyperBid_Get_Started</a></li>
 <br/>
 <h2>Running the demo</h2>
 
