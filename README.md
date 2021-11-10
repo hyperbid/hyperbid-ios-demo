@@ -11,7 +11,7 @@
 
 <li>Clone this repository using the command:</li>
 <code>
-git clone https://github.com/hyperbid/hyperbid-android-demo
+git clone https://github.com/hyperbid/hyperbid-ios-demo
 </code>
 <li>Run pod install</li>
 <code>
