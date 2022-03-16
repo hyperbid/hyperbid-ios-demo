@@ -27,7 +27,7 @@
 		52C3BB6126FA18B300A52BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C3BB5E26FA18B300A52BB8 /* LaunchScreen.storyboard */; };
 		52E3828826CF8D1800E75555 /* hyperbid_ios_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3828726CF8D1800E75555 /* hyperbid_ios_demoTests.m */; };
 		52E3829326CF8D1800E75555 /* hyperbid_ios_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3829226CF8D1800E75555 /* hyperbid_ios_demoUITests.m */; };
-		52F6A56C26D38CE800AA18DB /* Adjust in Resources */ = {isa = PBXBuildFile; fileRef = 52F6A55426D38CE700AA18DB /* Adjust */; };
+		52F6A56C26D38CE800AA18DB /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		6C98132B8943D54729475C42 /* Pods_hyperbid_ios_demoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E05394735F53EF7BE0733A9 /* Pods_hyperbid_ios_demoTests.framework */; };
 		A712F8FD9A0EF4492B0229BC /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE32A6D0D83D0ABB17E8CC10 /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +93,7 @@
 		52E3829426CF8D1800E75555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		751EAC25BB6D88F550457937 /* Pods-hyperbid_ios_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demo.debug.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demo/Pods-hyperbid_ios_demo.debug.xcconfig"; sourceTree = "<group>"; };
 		77235CD0ED3E03FA38FC1A30 /* Pods-hyperbid_ios_demoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demoTests.debug.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demoTests/Pods-hyperbid_ios_demoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B41FCB7471220863C8654EA /* Pods-hyperbid_ios_demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demo.release.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demo/Pods-hyperbid_ios_demo.release.xcconfig"; sourceTree = "<group>"; };
 		8AC4C86C0DE72EB91108F5FB /* Pods_hyperbid_ios_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hyperbid_ios_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45BFF48AA3763E84F638A46 /* Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.release.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests/Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE32A6D0D83D0ABB17E8CC10 /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,11 +132,11 @@
 			isa = PBXGroup;
 			children = (
 				751EAC25BB6D88F550457937 /* Pods-hyperbid_ios_demo.debug.xcconfig */,
-				64B409B88AD38B7F4F23D690 /* Pods-hyperbid_ios_demo.release.xcconfig */,
 				D2B5D230B71EF987AC75B317 /* Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.debug.xcconfig */,
 				C45BFF48AA3763E84F638A46 /* Pods-hyperbid_ios_demo-hyperbid_ios_demoUITests.release.xcconfig */,
 				77235CD0ED3E03FA38FC1A30 /* Pods-hyperbid_ios_demoTests.debug.xcconfig */,
 				27DCA4E8B0C48F925D5C97F0 /* Pods-hyperbid_ios_demoTests.release.xcconfig */,
+				7B41FCB7471220863C8654EA /* Pods-hyperbid_ios_demo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -207,7 +208,6 @@
 				52C3BB4126F9DB1900A52BB8 /* SimpleWebViewController.swift */,
 				52C3BB3826F9DB1900A52BB8 /* ViewController.h */,
 				52C3BB2D26F9DB1800A52BB8 /* ViewController.m */,
-				52F6A55426D38CE700AA18DB /* Adjust */,
 			);
 			path = hyperbid_ios_demo;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C3BB6126FA18B300A52BB8 /* LaunchScreen.storyboard in Resources */,
-				52F6A56C26D38CE800AA18DB /* Adjust in Resources */,
+				52F6A56C26D38CE800AA18DB /* BuildFile in Resources */,
 				52C3BB6026FA18B300A52BB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,7 +748,7 @@
 		};
 		52E3829926CF8D1800E75555 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64B409B88AD38B7F4F23D690 /* Pods-hyperbid_ios_demo.release.xcconfig */;
+			baseConfigurationReference = 7B41FCB7471220863C8654EA /* Pods-hyperbid_ios_demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

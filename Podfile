@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'hyperbid_ios_demo' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,38 +7,38 @@ target 'hyperbid_ios_demo' do
 
   # Pods for hyperbid_ios_demo
   # hyperbid core
-  pod 'HyperBidiOS/HyperBidSDK','5.7.78'
+  pod 'HyperBidiOS/HyperBidSDK','5.8.13'
 
   #hyperbid adapters
-  pod 'HyperBidiOS/HyperBidFacebookAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidAdmobAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidGDTAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidMintegralAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidApplovinAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidUnityAdsAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidChartboostAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidTapjoyAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidVungleAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidInmobiAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidIronSourceAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidNendAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidMaioAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidKSAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidBaiduAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidSigmobAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidOguryAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidStartAppAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidFyberAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidMopubAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidKidozAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidPangleAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidMyTargetAdapter','5.7.78'
-  pod 'HyperBidiOS/HyperBidPangleAdapter','5.7.78'
+  pod 'HyperBidiOS/HyperBidFacebookAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidAdmobAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidGDTAdapter', '5.8.13'
+  pod 'HyperBidiOS/HyperBidMintegralAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidApplovinAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidUnityAdsAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidChartboostAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidTapjoyAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidVungleAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidInmobiAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidIronSourceAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidNendAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidMaioAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidKSAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidBaiduAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidSigmobAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidOguryAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidStartAppAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidFyberAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidMopubAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidKidozAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidPangleAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidMyTargetAdapter','5.8.13'
+  pod 'HyperBidiOS/HyperBidPangleAdapter','5.8.13'
 
-  pod 'FBAudienceNetwork' , '6.7.0'
-  pod 'Google-Mobile-Ads-SDK','8.10.0'
+  pod 'FBAudienceNetwork' , '6.9.0'
+  pod 'Google-Mobile-Ads-SDK','8.13.0'
   pod 'PersonalizedAdConsent'
-  pod 'Ads-Global' , '3.6.1.5'
+  pod 'Ads-Global', '3.9.0.4'
   
   pod 'AppsFlyerFramework', '6.3.5'
 

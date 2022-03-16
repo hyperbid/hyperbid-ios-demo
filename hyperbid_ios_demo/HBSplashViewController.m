@@ -122,79 +122,6 @@ static NSString *const kMobrainPlacementID = @"b601a111ad6efa";
     _failureTipsLabel.hidden = YES;
 }
 
-// MARK:- data
-- (NSDictionary *)getSplashInfo:(NSString *)name {
-    NSDictionary *extra = nil;
-    NSTimeInterval tolerateTimeout = 5.5f;
-    if ([name isEqualToString:kMintegralPlacement]) {
-        extra = @{kHBSplashExtraNetworkFirmID:@6,
-                  kHBSplashExtraAdSourceIDKey:@"68147",
-                  kHBSplashExtraMintegralAppID:@"104036",
-                  kHBSplashExtraMintegralAppKey:@"ef13ef712aeb0f6eb3d698c4c08add96",
-                  kHBSplashExtraMintegralUnitID:@"275050",
-                  kHBSplashExtraTolerateTimeoutKey:@(tolerateTimeout)
-        };
-    } else if ([name isEqualToString:kSigmobPlacement]) {
-        extra = @{kHBSplashExtraNetworkFirmID:@29,
-                  kHBSplashExtraAdSourceIDKey:@"12302",
-                  kHBSplashExtraSigmobAppKey:@"eccdcdbd9adbd4a7",
-                  kHBSplashExtraSigmobAppID:@"6877",
-                  kHBSplashExtraSigmobPlacementID:@"ea1f8f9bd12",
-                  kHBSplashExtraTolerateTimeoutKey:@(tolerateTimeout)
-        };
-    } else if ([name isEqualToString:kGDTPlacement]) {
-        extra = @{kHBSplashExtraNetworkFirmID:@8,
-                  kHBSplashExtraAdSourceIDKey:@"12302",
-                  kHBSplashExtraGDTAppID:@"1105344611",
-                  kHBSplashExtraGDTUnitID:@"9040714184494018",
-                  kHBSplashExtraTolerateTimeoutKey:@(tolerateTimeout)
-        };
-    } else if ([name isEqualToString:kBaiduPlacement]) {
-        extra = @{kHBSplashExtraNetworkFirmID:@22,
-                  kHBSplashExtraAdSourceIDKey:@"1074",
-                  kHBSplashExtraBaiduAppID:@"ccb60059",
-                  kHBSplashExtraBaiduAdPlaceID:@"2058492",
-                  kHBSplashExtraTolerateTimeoutKey:@(tolerateTimeout)
-        };
-    } else if ([name isEqualToString:kTTPlacementName]) {
-        extra = @{kHBSplashExtraNetworkFirmID:@15,
-                  kHBSplashExtraAdSourceIDKey:@"3628",
-                  kHBSplashExtraAppID:@"5000546",
-                  kHBSplashExtraSlotID:@"800546808",
-                  kHBSplashExtraTolerateTimeoutKey:@(tolerateTimeout)
-        };
-    } else if ([name isEqualToString:kAdMobPlacement]) {
-        extra = @{kHBSplashExtraNetworkFirmID:@2,
-                  kHBSplashExtraAdSourceIDKey:@"145203",
-                  kHBSplashExtraAdmobAppID:@"ca-app-pub-9488501426181082~6772985580,",
-                  kHBSplashExtraAdmobUnitID:@"ca-app-pub-3940256099942544/1033173712",
-                  kHBSplashExtraAdmobOrientation:@(1),
-                  kHBSplashExtraTolerateTimeoutKey:@(tolerateTimeout)
-        };
-    } else if ([name isEqualToString:kKSPlacement]) {
-        extra = @{kHBSplashExtraNetworkFirmID:@28,
-                  kHBSplashExtraAdSourceIDKey:@"197933",
-                  kHBSplashExtraKSAppID:@"501400011",
-                  kHBSplashExtraKSPosID:@"5014000369",
-                  kHBSplashExtraShowDirectionKey:@(0),
-                  kHBSplashExtraTolerateTimeoutKey:@(tolerateTimeout)
-        };
-    } else if ([name isEqualToString:kAllPlacementName]) {
-        extra = @{kHBSplashExtraNetworkFirmID:@6,
-                  kHBSplashExtraAdSourceIDKey:@"72004",
-                  kHBSplashExtraMintegralAppID:@"104036",
-                  kHBSplashExtraMintegralAppKey:@"ef13ef712aeb0f6eb3d698c4c08add96",
-                  kHBSplashExtraMintegralUnitID:@"275050",
-                  kHBSplashExtraTolerateTimeoutKey:@(tolerateTimeout)
-        };
-    } else {
-        extra = @{
-            kHBSplashExtraTolerateTimeoutKey:@(tolerateTimeout)
-       };
-    }
-    
-    return extra;
-}
 
 // MARK:- actions
 -(void) readyButtonTapped {
@@ -224,14 +151,7 @@ static NSString *const kMobrainPlacementID = @"b601a111ad6efa";
     label.backgroundColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter;
     
-    NSMutableDictionary *mutableDict = [self getSplashInfo:_name].mutableCopy;
-    
-    [mutableDict setValue:self forKey:kHBSplashExtraRootViewControllerKey];
-    [mutableDict setValue:@"887423907" forKey:kHBSplashExtraRIDKey];
-    [mutableDict setValue:@"5135958" forKey:kHBSplashExtraAppIDKey];
-    [mutableDict setValue:@(1) forKey:kHBSplashExtraMobrainAdnTypeKey];
-    [mutableDict setValue:@"" forKey:kHBSplashExtraMobrainAppKeyKey];
-    [[HBAdManager sharedManager] loadAd:_placementIDs[_name] extra:mutableDict delegate:self containerView:nil];
+    [[HBAdManager sharedManager] loadAd:_placementIDs[_name] extra:nil delegate:self containerView:nil];
 }
 
 - (void)showAD {
