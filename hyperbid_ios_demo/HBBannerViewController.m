@@ -288,8 +288,6 @@ NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
             bannerView.presentingViewController = self;
             bannerView.translatesAutoresizingMaskIntoConstraints = NO;
             bannerView.tag = tag;
-          
-           
             self.adView = [[UIView alloc]init];// bannerView;
             self.adView.backgroundColor =  [UIColor colorWithRed:73/255.f green:109/255.f blue:255/255.f alpha:0.8f];
             [self.adView addSubview:bannerView];
