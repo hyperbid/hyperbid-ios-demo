@@ -28,10 +28,8 @@
 		52C3BB4826F9DB1A00A52BB8 /* HBSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2A26F9DB1800A52BB8 /* HBSplashViewController.m */; };
 		52C3BB4A26F9DB1A00A52BB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2D26F9DB1800A52BB8 /* ViewController.m */; };
 		52C3BB4B26F9DB1A00A52BB8 /* HyperBidAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2E26F9DB1800A52BB8 /* HyperBidAdManager.m */; };
-		52C3BB4C26F9DB1A00A52BB8 /* HBRewardedVideoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2F26F9DB1800A52BB8 /* HBRewardedVideoVideoViewController.m */; };
 		52C3BB4D26F9DB1A00A52BB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3026F9DB1800A52BB8 /* main.m */; };
 		52C3BB4E26F9DB1A00A52BB8 /* HBWebAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3126F9DB1800A52BB8 /* HBWebAction.swift */; };
-		52C3BB5026F9DB1A00A52BB8 /* HBNativeBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3426F9DB1800A52BB8 /* HBNativeBannerViewController.m */; };
 		52C3BB5126F9DB1A00A52BB8 /* HBInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3B26F9DB1900A52BB8 /* HBInterstitialViewController.m */; };
 		52C3BB5226F9DB1A00A52BB8 /* HBBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3D26F9DB1900A52BB8 /* HBBannerViewController.m */; };
 		52C3BB5326F9DB1A00A52BB8 /* HBNativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3E26F9DB1900A52BB8 /* HBNativeViewController.m */; };
@@ -109,21 +107,17 @@
 		52C3BB2B26F9DB1800A52BB8 /* hyperbid_ios_demo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hyperbid_ios_demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		52C3BB2D26F9DB1800A52BB8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		52C3BB2E26F9DB1800A52BB8 /* HyperBidAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyperBidAdManager.m; sourceTree = "<group>"; };
-		52C3BB2F26F9DB1800A52BB8 /* HBRewardedVideoVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBRewardedVideoVideoViewController.m; sourceTree = "<group>"; };
 		52C3BB3026F9DB1800A52BB8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52C3BB3126F9DB1800A52BB8 /* HBWebAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBWebAction.swift; sourceTree = "<group>"; };
 		52C3BB3226F9DB1800A52BB8 /* HBBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBannerViewController.h; sourceTree = "<group>"; };
-		52C3BB3426F9DB1800A52BB8 /* HBNativeBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBNativeBannerViewController.m; sourceTree = "<group>"; };
 		52C3BB3526F9DB1900A52BB8 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		52C3BB3626F9DB1900A52BB8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		52C3BB3726F9DB1900A52BB8 /* HBRewardedVideoVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBRewardedVideoVideoViewController.h; sourceTree = "<group>"; };
 		52C3BB3826F9DB1900A52BB8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		52C3BB3A26F9DB1900A52BB8 /* HBNativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBNativeViewController.h; sourceTree = "<group>"; };
 		52C3BB3B26F9DB1900A52BB8 /* HBInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBInterstitialViewController.m; sourceTree = "<group>"; };
 		52C3BB3C26F9DB1900A52BB8 /* HyperBidAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperBidAdManager.h; sourceTree = "<group>"; };
 		52C3BB3D26F9DB1900A52BB8 /* HBBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBannerViewController.m; sourceTree = "<group>"; };
 		52C3BB3E26F9DB1900A52BB8 /* HBNativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBNativeViewController.m; sourceTree = "<group>"; };
-		52C3BB3F26F9DB1900A52BB8 /* HBNativeBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBNativeBannerViewController.h; sourceTree = "<group>"; };
 		52C3BB4026F9DB1900A52BB8 /* HBSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSplashViewController.h; sourceTree = "<group>"; };
 		52C3BB4126F9DB1900A52BB8 /* SimpleWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleWebViewController.swift; sourceTree = "<group>"; };
 		52C3BB4226F9DB1900A52BB8 /* MTAutolayoutCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAutolayoutCategories.h; sourceTree = "<group>"; };
@@ -304,13 +298,9 @@
 				52C3BB3D26F9DB1900A52BB8 /* HBBannerViewController.m */,
 				52C3BB4426F9DB1A00A52BB8 /* HBInterstitialViewController.h */,
 				52C3BB3B26F9DB1900A52BB8 /* HBInterstitialViewController.m */,
-				04D02EE3280677CB00429D56 /* Native */,
-				52C3BB3F26F9DB1900A52BB8 /* HBNativeBannerViewController.h */,
-				52C3BB3426F9DB1800A52BB8 /* HBNativeBannerViewController.m */,
-				52C3BB3726F9DB1900A52BB8 /* HBRewardedVideoVideoViewController.h */,
-				52C3BB2F26F9DB1800A52BB8 /* HBRewardedVideoVideoViewController.m */,
 				52C3BB4026F9DB1900A52BB8 /* HBSplashViewController.h */,
 				52C3BB2A26F9DB1800A52BB8 /* HBSplashViewController.m */,
+				04D02EE3280677CB00429D56 /* Native */,
 				52C3BB3126F9DB1800A52BB8 /* HBWebAction.swift */,
 				52C3BB2B26F9DB1800A52BB8 /* hyperbid_ios_demo-Bridging-Header.h */,
 				52C3BB3C26F9DB1900A52BB8 /* HyperBidAdManager.h */,
@@ -633,7 +623,6 @@
 				04D02EF92806782C00429D56 /* HBNativeShowViewController.m in Sources */,
 				04D02EF72806782C00429D56 /* HBDrawViewController.m in Sources */,
 				04CF324B280023680083B5AA /* HBHomeFootView.m in Sources */,
-				52C3BB4C26F9DB1A00A52BB8 /* HBRewardedVideoVideoViewController.m in Sources */,
 				04CF324A280023680083B5AA /* HBHomeTableViewCell.m in Sources */,
 				52C3BB5626F9DB1A00A52BB8 /* AppDelegate.m in Sources */,
 				52C3BB4E26F9DB1A00A52BB8 /* HBWebAction.swift in Sources */,
@@ -650,7 +639,6 @@
 				04CF32572803C4AE0083B5AA /* HBMenuView.m in Sources */,
 				04CF32672803C5160083B5AA /* HBAutomationTableViewCell.m in Sources */,
 				04D02EF0280677DA00429D56 /* MTAutolayoutCategories.m in Sources */,
-				52C3BB5026F9DB1A00A52BB8 /* HBNativeBannerViewController.m in Sources */,
 				04D02EF82806782C00429D56 /* HBNativeMessageStreamViewController.m in Sources */,
 				52C3BB5726F9DB1A00A52BB8 /* MTAutolayoutCategories.m in Sources */,
 			);
