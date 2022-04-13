@@ -7,13 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04CF324A280023680083B5AA /* HBHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF3248280023680083B5AA /* HBHomeTableViewCell.m */; };
+		04CF324B280023680083B5AA /* HBHomeFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF3249280023680083B5AA /* HBHomeFootView.m */; };
+		04CF324E280041700083B5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CF324D280041700083B5AA /* Assets.xcassets */; };
+		04CF32512803C3DE0083B5AA /* HBRewardVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF324F2803C3DD0083B5AA /* HBRewardVideoViewController.m */; };
+		04CF32542803C49E0083B5AA /* HBADFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF32532803C49E0083B5AA /* HBADFootView.m */; };
+		04CF32572803C4AE0083B5AA /* HBMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF32562803C4AE0083B5AA /* HBMenuView.m */; };
+		04CF325A2803C4EB0083B5AA /* HBSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF32592803C4EB0083B5AA /* HBSelectViewController.m */; };
+		04CF325D2803C5070083B5AA /* HBModelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF325C2803C5070083B5AA /* HBModelButton.m */; };
+		04CF32652803C5160083B5AA /* HBSuspendedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF325F2803C5160083B5AA /* HBSuspendedButton.m */; };
+		04CF32662803C5160083B5AA /* HBAutomationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF32602803C5160083B5AA /* HBAutomationTestViewController.m */; };
+		04CF32672803C5160083B5AA /* HBAutomationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF32622803C5160083B5AA /* HBAutomationTableViewCell.m */; };
+		04D02EED280677DA00429D56 /* HBNativeRenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D02EE7280677DA00429D56 /* HBNativeRenderView.m */; };
+		04D02EEE280677DA00429D56 /* HBAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D02EE8280677DA00429D56 /* HBAutoLayout.m */; };
+		04D02EEF280677DA00429D56 /* DMADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D02EE9280677DA00429D56 /* DMADView.m */; };
+		04D02EF0280677DA00429D56 /* MTAutolayoutCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D02EEA280677DA00429D56 /* MTAutolayoutCategories.m */; };
+		04D02EF72806782C00429D56 /* HBDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D02EF22806782B00429D56 /* HBDrawViewController.m */; };
+		04D02EF82806782C00429D56 /* HBNativeMessageStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D02EF32806782B00429D56 /* HBNativeMessageStreamViewController.m */; };
+		04D02EF92806782C00429D56 /* HBNativeShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D02EF52806782B00429D56 /* HBNativeShowViewController.m */; };
 		52C3BB4826F9DB1A00A52BB8 /* HBSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2A26F9DB1800A52BB8 /* HBSplashViewController.m */; };
 		52C3BB4A26F9DB1A00A52BB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2D26F9DB1800A52BB8 /* ViewController.m */; };
 		52C3BB4B26F9DB1A00A52BB8 /* HyperBidAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2E26F9DB1800A52BB8 /* HyperBidAdManager.m */; };
 		52C3BB4C26F9DB1A00A52BB8 /* HBRewardedVideoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB2F26F9DB1800A52BB8 /* HBRewardedVideoVideoViewController.m */; };
 		52C3BB4D26F9DB1A00A52BB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3026F9DB1800A52BB8 /* main.m */; };
 		52C3BB4E26F9DB1A00A52BB8 /* HBWebAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3126F9DB1800A52BB8 /* HBWebAction.swift */; };
-		52C3BB4F26F9DB1A00A52BB8 /* HBDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3326F9DB1800A52BB8 /* HBDrawViewController.m */; };
 		52C3BB5026F9DB1A00A52BB8 /* HBNativeBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3426F9DB1800A52BB8 /* HBNativeBannerViewController.m */; };
 		52C3BB5126F9DB1A00A52BB8 /* HBInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3B26F9DB1900A52BB8 /* HBInterstitialViewController.m */; };
 		52C3BB5226F9DB1A00A52BB8 /* HBBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB3D26F9DB1900A52BB8 /* HBBannerViewController.m */; };
@@ -27,7 +44,7 @@
 		52C3BB6126FA18B300A52BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C3BB5E26FA18B300A52BB8 /* LaunchScreen.storyboard */; };
 		52E3828826CF8D1800E75555 /* hyperbid_ios_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3828726CF8D1800E75555 /* hyperbid_ios_demoTests.m */; };
 		52E3829326CF8D1800E75555 /* hyperbid_ios_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E3829226CF8D1800E75555 /* hyperbid_ios_demoUITests.m */; };
-		52F6A56C26D38CE800AA18DB /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		52F6A56C26D38CE800AA18DB /* (null) in Resources */ = {isa = PBXBuildFile; };
 		6C98132B8943D54729475C42 /* Pods_hyperbid_ios_demoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E05394735F53EF7BE0733A9 /* Pods_hyperbid_ios_demoTests.framework */; };
 		A712F8FD9A0EF4492B0229BC /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE32A6D0D83D0ABB17E8CC10 /* Pods_hyperbid_ios_demo_hyperbid_ios_demoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +67,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04CF3246280023680083B5AA /* HBHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBHomeTableViewCell.h; sourceTree = "<group>"; };
+		04CF3247280023680083B5AA /* HBHomeFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBHomeFootView.h; sourceTree = "<group>"; };
+		04CF3248280023680083B5AA /* HBHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBHomeTableViewCell.m; sourceTree = "<group>"; };
+		04CF3249280023680083B5AA /* HBHomeFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBHomeFootView.m; sourceTree = "<group>"; };
+		04CF324C280023F90083B5AA /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		04CF324D280041700083B5AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04CF324F2803C3DD0083B5AA /* HBRewardVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBRewardVideoViewController.m; sourceTree = "<group>"; };
+		04CF32502803C3DE0083B5AA /* HBRewardVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBRewardVideoViewController.h; sourceTree = "<group>"; };
+		04CF32522803C49E0083B5AA /* HBADFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBADFootView.h; sourceTree = "<group>"; };
+		04CF32532803C49E0083B5AA /* HBADFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBADFootView.m; sourceTree = "<group>"; };
+		04CF32552803C4AE0083B5AA /* HBMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBMenuView.h; sourceTree = "<group>"; };
+		04CF32562803C4AE0083B5AA /* HBMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBMenuView.m; sourceTree = "<group>"; };
+		04CF32582803C4EB0083B5AA /* HBSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSelectViewController.h; sourceTree = "<group>"; };
+		04CF32592803C4EB0083B5AA /* HBSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSelectViewController.m; sourceTree = "<group>"; };
+		04CF325B2803C5070083B5AA /* HBModelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBModelButton.h; sourceTree = "<group>"; };
+		04CF325C2803C5070083B5AA /* HBModelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBModelButton.m; sourceTree = "<group>"; };
+		04CF325F2803C5160083B5AA /* HBSuspendedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSuspendedButton.m; sourceTree = "<group>"; };
+		04CF32602803C5160083B5AA /* HBAutomationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAutomationTestViewController.m; sourceTree = "<group>"; };
+		04CF32612803C5160083B5AA /* HBAutomationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAutomationTableViewCell.h; sourceTree = "<group>"; };
+		04CF32622803C5160083B5AA /* HBAutomationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAutomationTableViewCell.m; sourceTree = "<group>"; };
+		04CF32632803C5160083B5AA /* HBAutomationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAutomationTestViewController.h; sourceTree = "<group>"; };
+		04CF32642803C5160083B5AA /* HBSuspendedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSuspendedButton.h; sourceTree = "<group>"; };
+		04D02EE5280677DA00429D56 /* MTAutolayoutCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAutolayoutCategories.h; sourceTree = "<group>"; };
+		04D02EE6280677DA00429D56 /* DMADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMADView.h; sourceTree = "<group>"; };
+		04D02EE7280677DA00429D56 /* HBNativeRenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBNativeRenderView.m; sourceTree = "<group>"; };
+		04D02EE8280677DA00429D56 /* HBAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAutoLayout.m; sourceTree = "<group>"; };
+		04D02EE9280677DA00429D56 /* DMADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMADView.m; sourceTree = "<group>"; };
+		04D02EEA280677DA00429D56 /* MTAutolayoutCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTAutolayoutCategories.m; sourceTree = "<group>"; };
+		04D02EEB280677DA00429D56 /* HBNativeRenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBNativeRenderView.h; sourceTree = "<group>"; };
+		04D02EEC280677DA00429D56 /* HBAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAutoLayout.h; sourceTree = "<group>"; };
+		04D02EF12806782B00429D56 /* HBNativeMessageStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBNativeMessageStreamViewController.h; sourceTree = "<group>"; };
+		04D02EF22806782B00429D56 /* HBDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBDrawViewController.m; sourceTree = "<group>"; };
+		04D02EF32806782B00429D56 /* HBNativeMessageStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBNativeMessageStreamViewController.m; sourceTree = "<group>"; };
+		04D02EF42806782B00429D56 /* HBNativeShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBNativeShowViewController.h; sourceTree = "<group>"; };
+		04D02EF52806782B00429D56 /* HBNativeShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBNativeShowViewController.m; sourceTree = "<group>"; };
+		04D02EF62806782B00429D56 /* HBDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBDrawViewController.h; sourceTree = "<group>"; };
 		27DCA4E8B0C48F925D5C97F0 /* Pods-hyperbid_ios_demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hyperbid_ios_demoTests.release.xcconfig"; path = "Target Support Files/Pods-hyperbid_ios_demoTests/Pods-hyperbid_ios_demoTests.release.xcconfig"; sourceTree = "<group>"; };
 		2E05394735F53EF7BE0733A9 /* Pods_hyperbid_ios_demoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hyperbid_ios_demoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C3BB2A26F9DB1800A52BB8 /* HBSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSplashViewController.m; sourceTree = "<group>"; };
@@ -60,13 +113,11 @@
 		52C3BB3026F9DB1800A52BB8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52C3BB3126F9DB1800A52BB8 /* HBWebAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBWebAction.swift; sourceTree = "<group>"; };
 		52C3BB3226F9DB1800A52BB8 /* HBBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBannerViewController.h; sourceTree = "<group>"; };
-		52C3BB3326F9DB1800A52BB8 /* HBDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBDrawViewController.m; sourceTree = "<group>"; };
 		52C3BB3426F9DB1800A52BB8 /* HBNativeBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBNativeBannerViewController.m; sourceTree = "<group>"; };
 		52C3BB3526F9DB1900A52BB8 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		52C3BB3626F9DB1900A52BB8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52C3BB3726F9DB1900A52BB8 /* HBRewardedVideoVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBRewardedVideoVideoViewController.h; sourceTree = "<group>"; };
 		52C3BB3826F9DB1900A52BB8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		52C3BB3926F9DB1900A52BB8 /* HBDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBDrawViewController.h; sourceTree = "<group>"; };
 		52C3BB3A26F9DB1900A52BB8 /* HBNativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBNativeViewController.h; sourceTree = "<group>"; };
 		52C3BB3B26F9DB1900A52BB8 /* HBInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBInterstitialViewController.m; sourceTree = "<group>"; };
 		52C3BB3C26F9DB1900A52BB8 /* HyperBidAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperBidAdManager.h; sourceTree = "<group>"; };
@@ -128,6 +179,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04CF3245280023680083B5AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04CF325E2803C5160083B5AA /* Automation */,
+				04CF325B2803C5070083B5AA /* HBModelButton.h */,
+				04CF325C2803C5070083B5AA /* HBModelButton.m */,
+				04CF32552803C4AE0083B5AA /* HBMenuView.h */,
+				04CF32562803C4AE0083B5AA /* HBMenuView.m */,
+				04CF32522803C49E0083B5AA /* HBADFootView.h */,
+				04CF32532803C49E0083B5AA /* HBADFootView.m */,
+				04CF3246280023680083B5AA /* HBHomeTableViewCell.h */,
+				04CF3248280023680083B5AA /* HBHomeTableViewCell.m */,
+				04CF3247280023680083B5AA /* HBHomeFootView.h */,
+				04CF3249280023680083B5AA /* HBHomeFootView.m */,
+				04CF32582803C4EB0083B5AA /* HBSelectViewController.h */,
+				04CF32592803C4EB0083B5AA /* HBSelectViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04CF325E2803C5160083B5AA /* Automation */ = {
+			isa = PBXGroup;
+			children = (
+				04CF32642803C5160083B5AA /* HBSuspendedButton.h */,
+				04CF325F2803C5160083B5AA /* HBSuspendedButton.m */,
+				04CF32602803C5160083B5AA /* HBAutomationTestViewController.m */,
+				04CF32632803C5160083B5AA /* HBAutomationTestViewController.h */,
+				04CF32612803C5160083B5AA /* HBAutomationTableViewCell.h */,
+				04CF32622803C5160083B5AA /* HBAutomationTableViewCell.m */,
+			);
+			path = Automation;
+			sourceTree = "<group>";
+		};
+		04D02EE3280677CB00429D56 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				52C3BB3A26F9DB1900A52BB8 /* HBNativeViewController.h */,
+				52C3BB3E26F9DB1900A52BB8 /* HBNativeViewController.m */,
+				04D02EF62806782B00429D56 /* HBDrawViewController.h */,
+				04D02EF22806782B00429D56 /* HBDrawViewController.m */,
+				04D02EF12806782B00429D56 /* HBNativeMessageStreamViewController.h */,
+				04D02EF32806782B00429D56 /* HBNativeMessageStreamViewController.m */,
+				04D02EF42806782B00429D56 /* HBNativeShowViewController.h */,
+				04D02EF52806782B00429D56 /* HBNativeShowViewController.m */,
+				04D02EE4280677DA00429D56 /* View */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		04D02EE4280677DA00429D56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04D02EE5280677DA00429D56 /* MTAutolayoutCategories.h */,
+				04D02EEA280677DA00429D56 /* MTAutolayoutCategories.m */,
+				04D02EE6280677DA00429D56 /* DMADView.h */,
+				04D02EE9280677DA00429D56 /* DMADView.m */,
+				04D02EEB280677DA00429D56 /* HBNativeRenderView.h */,
+				04D02EE7280677DA00429D56 /* HBNativeRenderView.m */,
+				04D02EEC280677DA00429D56 /* HBAutoLayout.h */,
+				04D02EE8280677DA00429D56 /* HBAutoLayout.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1B767432508C33A806CC315B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,21 +291,22 @@
 		52E3826A26CF8D1500E75555 /* hyperbid_ios_demo */ = {
 			isa = PBXGroup;
 			children = (
+				04CF324D280041700083B5AA /* Assets.xcassets */,
+				04CF3245280023680083B5AA /* View */,
 				52C3BB5E26FA18B300A52BB8 /* LaunchScreen.storyboard */,
 				52C3BB5C26FA18B300A52BB8 /* Main.storyboard */,
 				52C3BB5826F9DBEE00A52BB8 /* Info.plist */,
 				52C3BB3626F9DB1900A52BB8 /* AppDelegate.h */,
 				52C3BB4626F9DB1A00A52BB8 /* AppDelegate.m */,
+				04CF32502803C3DE0083B5AA /* HBRewardVideoViewController.h */,
+				04CF324F2803C3DD0083B5AA /* HBRewardVideoViewController.m */,
 				52C3BB3226F9DB1800A52BB8 /* HBBannerViewController.h */,
 				52C3BB3D26F9DB1900A52BB8 /* HBBannerViewController.m */,
-				52C3BB3926F9DB1900A52BB8 /* HBDrawViewController.h */,
-				52C3BB3326F9DB1800A52BB8 /* HBDrawViewController.m */,
 				52C3BB4426F9DB1A00A52BB8 /* HBInterstitialViewController.h */,
 				52C3BB3B26F9DB1900A52BB8 /* HBInterstitialViewController.m */,
+				04D02EE3280677CB00429D56 /* Native */,
 				52C3BB3F26F9DB1900A52BB8 /* HBNativeBannerViewController.h */,
 				52C3BB3426F9DB1800A52BB8 /* HBNativeBannerViewController.m */,
-				52C3BB3A26F9DB1900A52BB8 /* HBNativeViewController.h */,
-				52C3BB3E26F9DB1900A52BB8 /* HBNativeViewController.m */,
 				52C3BB3726F9DB1900A52BB8 /* HBRewardedVideoVideoViewController.h */,
 				52C3BB2F26F9DB1800A52BB8 /* HBRewardedVideoVideoViewController.m */,
 				52C3BB4026F9DB1900A52BB8 /* HBSplashViewController.h */,
@@ -208,6 +324,7 @@
 				52C3BB4126F9DB1900A52BB8 /* SimpleWebViewController.swift */,
 				52C3BB3826F9DB1900A52BB8 /* ViewController.h */,
 				52C3BB2D26F9DB1800A52BB8 /* ViewController.m */,
+				04CF324C280023F90083B5AA /* PrefixHeader.pch */,
 			);
 			path = hyperbid_ios_demo;
 			sourceTree = "<group>";
@@ -341,7 +458,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C3BB6126FA18B300A52BB8 /* LaunchScreen.storyboard in Resources */,
-				52F6A56C26D38CE800AA18DB /* BuildFile in Resources */,
+				52F6A56C26D38CE800AA18DB /* (null) in Resources */,
+				04CF324E280041700083B5AA /* Assets.xcassets in Resources */,
 				52C3BB6026FA18B300A52BB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,18 +624,34 @@
 			files = (
 				52C3BB5226F9DB1A00A52BB8 /* HBBannerViewController.m in Sources */,
 				52C3BB4D26F9DB1A00A52BB8 /* main.m in Sources */,
+				04CF32652803C5160083B5AA /* HBSuspendedButton.m in Sources */,
 				52C3BB5526F9DB1A00A52BB8 /* SceneDelegate.m in Sources */,
 				52C3BB5126F9DB1A00A52BB8 /* HBInterstitialViewController.m in Sources */,
 				52C3BB5426F9DB1A00A52BB8 /* SimpleWebViewController.swift in Sources */,
+				04D02EEE280677DA00429D56 /* HBAutoLayout.m in Sources */,
+				04CF32512803C3DE0083B5AA /* HBRewardVideoViewController.m in Sources */,
+				04D02EF92806782C00429D56 /* HBNativeShowViewController.m in Sources */,
+				04D02EF72806782C00429D56 /* HBDrawViewController.m in Sources */,
+				04CF324B280023680083B5AA /* HBHomeFootView.m in Sources */,
 				52C3BB4C26F9DB1A00A52BB8 /* HBRewardedVideoVideoViewController.m in Sources */,
+				04CF324A280023680083B5AA /* HBHomeTableViewCell.m in Sources */,
 				52C3BB5626F9DB1A00A52BB8 /* AppDelegate.m in Sources */,
 				52C3BB4E26F9DB1A00A52BB8 /* HBWebAction.swift in Sources */,
+				04CF325D2803C5070083B5AA /* HBModelButton.m in Sources */,
+				04CF325A2803C4EB0083B5AA /* HBSelectViewController.m in Sources */,
 				52C3BB4A26F9DB1A00A52BB8 /* ViewController.m in Sources */,
-				52C3BB4F26F9DB1A00A52BB8 /* HBDrawViewController.m in Sources */,
 				52C3BB5326F9DB1A00A52BB8 /* HBNativeViewController.m in Sources */,
+				04D02EED280677DA00429D56 /* HBNativeRenderView.m in Sources */,
+				04CF32542803C49E0083B5AA /* HBADFootView.m in Sources */,
+				04CF32662803C5160083B5AA /* HBAutomationTestViewController.m in Sources */,
 				52C3BB4B26F9DB1A00A52BB8 /* HyperBidAdManager.m in Sources */,
+				04D02EEF280677DA00429D56 /* DMADView.m in Sources */,
 				52C3BB4826F9DB1A00A52BB8 /* HBSplashViewController.m in Sources */,
+				04CF32572803C4AE0083B5AA /* HBMenuView.m in Sources */,
+				04CF32672803C5160083B5AA /* HBAutomationTableViewCell.m in Sources */,
+				04D02EF0280677DA00429D56 /* MTAutolayoutCategories.m in Sources */,
 				52C3BB5026F9DB1A00A52BB8 /* HBNativeBannerViewController.m in Sources */,
+				04D02EF82806782C00429D56 /* HBNativeMessageStreamViewController.m in Sources */,
 				52C3BB5726F9DB1A00A52BB8 /* MTAutolayoutCategories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,7 +837,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG9NL374WX;
+				DEVELOPMENT_TEAM = 6YXYV74FF7;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGET_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/Headers\"",
@@ -754,7 +890,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG9NL374WX;
+				DEVELOPMENT_TEAM = 6YXYV74FF7;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGET_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/Headers\"",
@@ -844,6 +982,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = hyperbid_ios_demoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -863,6 +1002,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = hyperbid_ios_demoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

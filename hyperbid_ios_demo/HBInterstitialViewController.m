@@ -8,7 +8,11 @@
 
 #import "HBInterstitialViewController.h"
 #import "HyperBidAdManager.h"
+#import "HBModelButton.h"
+#import "HBADFootView.h"
+#import "HBMenuView.h"
 
+#import "HBSuspendedButton.h"
 @import HyperBidSDK;
 @import HyperBidInterstitial;
 
@@ -74,110 +78,195 @@ static NSString *const kMobrainPlacementID = @"b601cac971d07c";
 @property(nonatomic, readonly) NSString *name;
 @property(nonatomic, readonly) NSDictionary<NSString*, NSString*>* placementIDs;
 @property(nonatomic, readonly) UIActivityIndicatorView *loadingView;
-@property(nonatomic, readonly) UILabel *failureTipsLabel;
-@property(nonatomic, readonly) UIButton *reloadADButton;
-@property(nonatomic, readonly) UIButton *clearAdButton;
-@property(nonatomic, readonly) UIButton *showAdButton;
-@property(nonatomic, readonly) UIButton *removeAdButton;
+
+
+
+@property (copy, nonatomic) NSString *placementID;
+@property (nonatomic, strong) HBModelButton *fullScreenBtn;
+
+@property (nonatomic, strong) HBModelButton *interstitialBtn;
+
+@property (nonatomic, strong) UITextView *textView;
+
+@property (nonatomic, strong) HBSuspendedButton *suspendedBtn;
+
+@property (copy, nonatomic) NSDictionary<NSString *, NSString *> *placementIDs_inter;
+@property (copy, nonatomic) NSDictionary<NSString *, NSString *> *placementIDs_fullScreen;
+
+@property(nonatomic, strong) NSString *togetherLoadAdStr;
+@property(nonatomic,assign) BOOL isAuto;
+
+
+@property (nonatomic, strong) HBADFootView *footView;
+@property (nonatomic, strong) HBMenuView *menuView;
+
 @end
 
 @implementation HBInterstitialViewController
--(instancetype) initWithPlacementName:(NSString *)name {
-    if (self = [super init]) {
-        _name = name;
-        _placementIDs = @{
-                          kGDTPlacement:kGDTPlacementID,
-                          kTTPlacementName:kTTPlacementID,
-                          kTTVideoPlacement:kTTVideoPlacementID,
-                          kAdMobPlacement:kAdmobPlacementID,
-                          kMintegralPlacement:kMintegralPlacementID,
-                          kMintegralVideoPlacement:kMintegralVideoPlacementID,
-                          kHeaderBiddingPlacement:kMintegralHeaderBiddingPlacementID,
-                          kApplovinPlacement:kApplovinPlacementID,
-                          kFacebookPlacement:kFacebookPlacementID,
-                          kFacebookHeaderBiddingPlacement:kFacebookHeaderBiddingPlacementID,
-                          kInmobiPlacement:kInmobiPlacementID,
-                          kMopubPlacementName:kMopubPlacementID,
-                          kChartboostPlacementName:kChartboostPlacementID,
-                          kTapjoyPlacementName:kTapjoyPlacementID,
-                          kIronsourcePlacementName:kIronsourcePlacementID,
-                          kVunglePlacementName:kVunglePlacementID,
-                          kAdcolonyPlacementName:kAdColonyPlacementID,
-                          kAllPlacementName:kAllPlacementID,
-                          kAppnextPlacement:kAppnextPlacementID,
-                          kBaiduPlacement:kBaiduPlacementID,
-                          kUnityAdsPlacementName:kUnityAdsPlacementID,
-                          kNendPlacement:kNendPlacementID,
-                          kNendInterstitialVideoPlacement:kNendVideoPlacementID,
-                          kNendFullScreenInterstitialPlacement:kNendFullScreenPlacementID,
-                          kMaioPlacement:kMaioPlacementID,
-                          kSigmobPlacement:kSigmobPlacementID,
-                          kSigmobRVIntPlacement:kSigmobIntRVPlacementID,
-                          kKSPlacement:kKSPlacementID,
-                          kMyOfferPlacement:kMyOfferPlacementID,
-                          kOguryPlacement:kOguryPlacementID,
-                          kStartAppPlacement:kStartAppPlacementID,
-                          kStartAppVideoPlacement:kStartAppVideoPlacementID,
-                          kFyberPlacement:kFyberPlacementID,
-                          kGAMPlacement:kGAMPlacementID,
-                          kHeliumPlacement:kHeliumPlacementID,
-                          kADXPlacement:kADXPlacementID,
-                          kOnlineApiPlacement:kOnlineApiPlacementID,
-                          kKidozPlacement:kKidozPlacementID,
-                          kMyTargetPlacement:kMyTargetPlacementID,
-                          kOFMPlacement:kOFMPlacementID,
-                          kMobrainPlacement:kMobrainPlacementID
-                          };
-    }
-    return self;
+
+-(instancetype)init{
+    self = [super init];
+    
+    _placementIDs = @{
+                      kGDTPlacement:kGDTPlacementID,
+                      kTTPlacementName:kTTPlacementID,
+                      kTTVideoPlacement:kTTVideoPlacementID,
+                      kAdMobPlacement:kAdmobPlacementID,
+                      kMintegralPlacement:kMintegralPlacementID,
+                      kMintegralVideoPlacement:kMintegralVideoPlacementID,
+                      kHeaderBiddingPlacement:kMintegralHeaderBiddingPlacementID,
+                      kApplovinPlacement:kApplovinPlacementID,
+                      kFacebookPlacement:kFacebookPlacementID,
+                      kFacebookHeaderBiddingPlacement:kFacebookHeaderBiddingPlacementID,
+                      kInmobiPlacement:kInmobiPlacementID,
+                      kMopubPlacementName:kMopubPlacementID,
+                      kChartboostPlacementName:kChartboostPlacementID,
+                      kTapjoyPlacementName:kTapjoyPlacementID,
+                      kIronsourcePlacementName:kIronsourcePlacementID,
+                      kVunglePlacementName:kVunglePlacementID,
+                      kAdcolonyPlacementName:kAdColonyPlacementID,
+                      kAllPlacementName:kAllPlacementID,
+                      kAppnextPlacement:kAppnextPlacementID,
+                      kBaiduPlacement:kBaiduPlacementID,
+                      kUnityAdsPlacementName:kUnityAdsPlacementID,
+                      kNendPlacement:kNendPlacementID,
+                      kNendInterstitialVideoPlacement:kNendVideoPlacementID,
+                      kNendFullScreenInterstitialPlacement:kNendFullScreenPlacementID,
+                      kMaioPlacement:kMaioPlacementID,
+                      kSigmobPlacement:kSigmobPlacementID,
+                      kSigmobRVIntPlacement:kSigmobIntRVPlacementID,
+                      kKSPlacement:kKSPlacementID,
+                      kMyOfferPlacement:kMyOfferPlacementID,
+                      kOguryPlacement:kOguryPlacementID,
+                      kStartAppPlacement:kStartAppPlacementID,
+                      kStartAppVideoPlacement:kStartAppVideoPlacementID,
+                      kFyberPlacement:kFyberPlacementID,
+                      kGAMPlacement:kGAMPlacementID,
+                      kHeliumPlacement:kHeliumPlacementID,
+                      kADXPlacement:kADXPlacementID,
+                      kOnlineApiPlacement:kOnlineApiPlacementID,
+                      kKidozPlacement:kKidozPlacementID,
+                      kMyTargetPlacement:kMyTargetPlacementID,
+                      kOFMPlacement:kOFMPlacementID,
+                      kMobrainPlacement:kMobrainPlacementID
+                      };
+    return  self;
 }
 
 -(void) viewDidLoad {
     [super viewDidLoad];
     [[HBAPI sharedInstance] setCustomData:@{@"test_key":@"test_val"} forPlacementID:kGDTPlacementID];
     
-    self.title = _name;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"Intersitial";
+    self.view.backgroundColor = kRGB(245, 245, 245);
     
-    _reloadADButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_reloadADButton addTarget:self action:@selector(reloadADButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [_reloadADButton setTitleColor:_reloadADButton.tintColor forState:UIControlStateNormal];
-    [_reloadADButton setTitle:@"Reload AD" forState:UIControlStateNormal];
-    [_reloadADButton setBackgroundColor:[UIColor grayColor]];
-    _reloadADButton.frame = CGRectMake(.0f, CGRectGetMaxY(self.view.bounds) - 100.0f, (CGRectGetWidth(self.view.bounds) - 40) / 2.0f, 60.0f);
-    [self.view addSubview:_reloadADButton];
+    [self setupUI];
+    [self changeModel:self.fullScreenBtn];
     
-    _showAdButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_showAdButton addTarget:self action:@selector(showAD) forControlEvents:UIControlEventTouchUpInside];
-    [_showAdButton setTitleColor:_showAdButton.tintColor forState:UIControlStateNormal];
-    [_showAdButton setTitle:@"Show AD" forState:UIControlStateNormal];
-    [_showAdButton setBackgroundColor:[UIColor grayColor]];
-    _showAdButton.frame = CGRectMake(CGRectGetMaxX(_reloadADButton.frame) + 40.0f, CGRectGetMinY(_reloadADButton.frame), (CGRectGetWidth(self.view.bounds) - 40) / 2.0f, 60.0f);
-    [self.view addSubview:_showAdButton];
+    [HBInterstitialAutoAdManager sharedInstance].delegate = self;
     
-    _clearAdButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_clearAdButton addTarget:self action:@selector(clearAdButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [_clearAdButton setTitleColor:_clearAdButton.tintColor forState:UIControlStateNormal];
-    [_clearAdButton setTitle:@"clear cache" forState:UIControlStateNormal];
-    [_clearAdButton setBackgroundColor:[UIColor grayColor]];
-    _clearAdButton.frame = CGRectMake(.0f, CGRectGetMinY(_reloadADButton.frame) - 20.0f - 60.0f, (CGRectGetWidth(self.view.bounds) - 40) / 2.0f, 60.0f);
-    [self.view addSubview:_clearAdButton];
     
-    _removeAdButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_removeAdButton addTarget:self action:@selector(removeAdButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [_removeAdButton setTitleColor:_removeAdButton.tintColor forState:UIControlStateNormal];
-    [_removeAdButton setTitle:@"Ad Ready?" forState:UIControlStateNormal];
-    [_removeAdButton setBackgroundColor:[UIColor grayColor]];
-    _removeAdButton.frame = CGRectMake(CGRectGetMaxX(_clearAdButton.frame) + 40.0f, CGRectGetMinY(_clearAdButton.frame), (CGRectGetWidth(self.view.bounds) - 40) / 2.0f, 60.0f);
-    [self.view addSubview:_removeAdButton];
     
-    _failureTipsLabel = [[UILabel alloc] initWithFrame:CGRectMake(.0f, 64.0f, CGRectGetWidth(self.view.bounds), 400.0f)];
-    _failureTipsLabel.text = @"Failed to load ad";
-    _failureTipsLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:_failureTipsLabel];
-    _failureTipsLabel.hidden = YES;
 }
 
+
+- (void)setupUI
+{
+    UIButton *clearBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
+    [clearBtn setTitle:@"clear log" forState:UIControlStateNormal];
+    [clearBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [clearBtn addTarget:self action:@selector(clearLog) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithCustomView:clearBtn];
+    self.navigationItem.rightBarButtonItem = btnItem;
+    
+    [self.view addSubview:self.fullScreenBtn];
+    [self.view addSubview:self.interstitialBtn];
+    [self.view addSubview:self.menuView];
+    [self.view addSubview:self.textView];
+    [self.view addSubview:self.footView];
+//    [self.view addSubview:self.suspendedBtn];
+    
+    [self.fullScreenBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo((kScreenW - kScaleW(26) * 3) / 2);
+        make.height.mas_equalTo(kScaleW(360));
+        make.top.equalTo(self.view.mas_top).offset( kScaleW(20));
+        make.left.equalTo(self.view.mas_left).offset(kScaleW(26));
+    }];
+
+    [self.interstitialBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view.mas_right).offset(kScaleW(-26));
+        make.width.mas_equalTo((kScreenW - kScaleW(26) * 3) / 2);
+        make.height.mas_equalTo(kScaleW(360));
+        make.top.equalTo(self.view.mas_top).offset( kScaleW(20));
+    }];
+
+    [self.menuView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(kScreenW - kScaleW(52));
+        make.height.mas_equalTo(kScaleW(242));
+        make.top.equalTo(self.fullScreenBtn.mas_bottom).offset(kScaleW(20));
+        make.centerX.equalTo(self.view.mas_centerX);
+    }];
+
+    [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.menuView.mas_bottom).offset(kScaleW(20));
+        make.bottom.equalTo(self.footView.mas_top).offset(kScaleW(-20));
+        make.width.mas_equalTo(kScreenW - kScaleW(52));
+        make.centerX.equalTo(self.view.mas_centerX);
+    }];
+
+    [self.footView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+        make.height.mas_equalTo(kScaleW(340));
+    }];
+    
+//    [self.suspendedBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.height.mas_equalTo(kScaleW(100));
+//        make.top.equalTo(self.view.mas_top).offset(kScaleW(200));
+//        make.right.equalTo(self.view.mas_right);
+//    }];
+}
+
+- (void)setupData
+{
+    self.placementID = self.placementIDs.allValues.firstObject;
+}
+
+#pragma mark - Action
+#pragma mark - Action
+- (void)changeModel:(UIButton *)sender
+{
+    if ((self.fullScreenBtn.isSelected && sender == self.fullScreenBtn) || (self.interstitialBtn.isSelected && sender == self.interstitialBtn)) {
+        return;
+    }
+    self.fullScreenBtn.selected = sender == self.fullScreenBtn;
+    self.interstitialBtn.selected = sender == self.interstitialBtn;
+    [self.fullScreenBtn setButtonIsSelectBoard];
+    [self.interstitialBtn setButtonIsSelectBoard];
+    
+    
+    if (!self.interstitialBtn.isSelected) {
+        self.interstitialBtn.image.image = [UIImage imageNamed:@"banner_unselect"];
+    }else{
+        self.interstitialBtn.image.image = [UIImage imageNamed:@"banner"];
+    }
+    
+    if (!self.fullScreenBtn.isSelected) {
+        self.fullScreenBtn.image.image = [UIImage imageNamed:@"Interstitial-fullscreen_unselect"];
+    }else{
+        self.fullScreenBtn.image.image = [UIImage imageNamed:@"Interstitial-fullscreen"];
+    }
+    
+    
+ 
+    [self resetPlacementID];
+}
+
+- (void)resetPlacementID {
+    [self.menuView resetMenuList:self.placementIDs.allKeys];
+    self.placementID = self.placementIDs.allValues.firstObject;
+}
 
 //Ad ready?
 -(void) removeAdButtonTapped {
@@ -202,68 +291,328 @@ static NSString *const kMobrainPlacementID = @"b601cac971d07c";
 
 -(void) reloadADButtonTapped {
     NSLog(@"Begin loading interstitial ad");
-    _failureTipsLabel.hidden = YES;
+    
     [self.view addSubview:_loadingView];
     [[HBAdManager sharedManager] loadAd:_placementIDs[_name] extra:[_name isEqualToString:kSigmobRVIntPlacement] ? @{kHBInterstitialExtraUsesRewardedVideo:@YES} : @{} delegate:self];
     
 }
 
--(void) showAD {
-    [[HBAdManager sharedManager] showInterstitialAd:_placementIDs[_name] scene:@"f5e549727efc49" inViewController:self delegate:self];
+- (void)loadAd
+{
+    CGSize size = CGSizeMake(CGRectGetWidth(self.view.bounds) - 30.0f, 300.0f);
+    NSDictionary *extraDic = @{
+        kHBInterstitialExtraAdSizeKey:[NSValue valueWithCGSize:size],
+    };
+
+    [[HBAdManager sharedManager] loadAd:self.placementID extra:
+     extraDic delegate:self];
 }
 
+- (void)checkAd
+{
+    
+//    HBCheckLoadModel *checkLoadModel = [[HBAdManager sharedManager] checkInterstitialReadyAdInfo:self.placementID];
+    
+    NSArray *checkArray = [[HBAdManager sharedManager] getInterstitialValidAdsForPlacementID:self.placementID];
+    
+    NSLog(@"HBInterstitialViewController--checkLoadModel--%ld----:%@",checkArray.count,checkArray);
+
+    
+    BOOL isReady = [[HBAdManager sharedManager] isReadyInterstitialWithPlacementID:self.placementID];
+    
+    if (_isAuto) {
+        isReady = [[HBInterstitialAutoAdManager sharedInstance] autoLoadInterstitialReadyForPlacementID:self.placementID];
+    }
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:isReady ? @"Ready!" : @"Not Yet!" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alert animated:YES completion:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        });
+    }];
+}
+
+- (void)showAd
+{
+   
+    if (self.isAuto) {
+    
+
+        
+        [[HBInterstitialAutoAdManager sharedInstance] showAutoLoadInterstitialWithPlacementID:self.placementID scene:@"f5e549727efc49" inViewController:self delegate:self];
+        
+        
+    }else{
+        [[HBAdManager sharedManager] showInterstitialAd:self.placementID scene:@"f5e549727efc49" inViewController:self delegate:self];
+        
+    }
+}
+
+- (void)showLog:(NSString *)logStr
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString *logS = self.textView.text;
+        NSString *log = nil;
+        if (![logS isEqualToString:@""]) {
+            log = [NSString stringWithFormat:@"%@\n%@", logS, logStr];
+        } else {
+            log = [NSString stringWithFormat:@"%@", logStr];
+        }
+        self.textView.text = log;
+        [self.textView scrollRangeToVisible:NSMakeRange(self.textView.text.length, 1)];
+    });
+}
 #pragma mark - delegate method(s)
+- (void)didStartLoadingADSourceWithPlacementID:(NSString *)placementID extra:(NSDictionary*)extra{
+    
+    NSLog(@"广告源--AD--开始--ATInterstitialViewController::didStartLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra);
+    
+//    [self showLog:[NSString stringWithFormat:@"didStartLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra]];
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+}
+
+- (void)didFinishLoadingADSourceWithPlacementID:(NSString *)placementID extra:(NSDictionary*)extra{
+    
+    NSLog(@"广告源--AD--完成--ATInterstitialViewController::didFinishLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra);
+    
+//    [self showLog:[NSString stringWithFormat:@"didFinishLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+}
+
+- (void)didFailToLoadADSourceWithPlacementID:(NSString*)placementID extra:(NSDictionary*)extra error:(NSError*)error{
+    NSLog(@"广告源--AD--失败--ATInterstitialViewController::didFailToLoadADSourceWithPlacementID:%@---error:%@", placementID,error);
+    
+//    [self showLog:[NSString stringWithFormat:@"didFailToLoadADSourceWithPlacementID:%@--%@", placementID],error];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+}
+
+// bidding
+- (void)didStartBiddingADSourceWithPlacementID:(NSString *)placementID extra:(NSDictionary*)extra{
+    
+    NSLog(@"广告源--bid--开始--ATInterstitialViewController::didStartBiddingADSourceWithPlacementID:%@---extra:%@", placementID,extra);
+    
+//    [self showLog:[NSString stringWithFormat:@"didStartBiddingADSourceWithPlacementID:%@---extra:%@", placementID,extra]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+}
+
+- (void)didFinishBiddingADSourceWithPlacementID:(NSString *)placementID extra:(NSDictionary*)extra{
+    
+    NSLog(@"广告源--bid--完成--ATInterstitialViewController::didFinishBiddingADSourceWithPlacementID:%@--extra:%@", placementID,extra);
+    
+//    [self showLog:[NSString stringWithFormat:@"didFinishBiddingADSourceWithPlacementID:%@---extra:%@", placementID,extra]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+}
+
+- (void)didFailBiddingADSourceWithPlacementID:(NSString*)placementID extra:(NSDictionary*)extra error:(NSError*)error{
+    
+    NSLog(@"广告源--bid--失败--ATInterstitialViewController::didFailBiddingADSourceWithPlacementID:%@--error:%@", placementID,error);
+    
+//    [self showLog:[NSString stringWithFormat:@"didFailBiddingADSourceWithPlacementID:%@", placementID]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+}
+
 -(void) didFinishLoadingADWithPlacementID:(NSString *)placementID {
     NSLog(@"HBInterstitialViewController::didFinishLoadingADWithPlacementID:%@", placementID);
-    _showAdButton.enabled = YES;
+    
+    [self showLog:[NSString stringWithFormat:@"didFinishLoadingADWithPlacementID:%@", placementID]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
 
 -(void) didFailToLoadADWithPlacementID:(NSString*)placementID error:(NSError*)error {
     NSLog(@"HBInterstitialViewController::didFailToLoadADWithPlacementID:%@ error:%@", placementID, error);
+    
+    [self showLog:[NSString stringWithFormat:@"didFailToLoadADWithPlacementID:%@ errorCode:%ld", placementID, error.code]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
-
-// ofm
--(void) didFinishLoadingOFMADWithPlacementID:(NSString *)placementID {
-    NSLog(@"HBInterstitialViewController::didFinishLoadingOFMADWithPlacementID:%@", placementID);
-    _showAdButton.enabled = YES;
-}
-
--(void) didFailToLoadOFMADWithPlacementID:(NSString*)placementID error:(NSError*)error {
-    NSLog(@"HBInterstitialViewController::didFailToLoadOFMADWithPlacementID:%@ error:%@", placementID, error);
-}
-
-#pragma mark - delegate with networkID and adsourceID
 
 -(void) interstitialDidShowForPlacementID:(NSString *)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBInterstitialViewController::interstitialDidShowForPlacementID:%@ extra:%@", placementID, extra);
+    
+    [self showLog:[NSString stringWithFormat:@"interstitialDidShowForPlacementID:%@", placementID]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
 
 -(void) interstitialFailedToShowForPlacementID:(NSString*)placementID error:(NSError*)error extra:(NSDictionary *)extra {
     NSLog(@"HBInterstitialViewController::interstitialFailedToShowForPlacementID:%@ error:%@ extra:%@", placementID, error, extra);
+    
+    [self showLog:[NSString stringWithFormat:@"interstitialFailedToShowForPlacementID:%@ error:%@", placementID, error]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
 
 -(void) interstitialDidFailToPlayVideoForPlacementID:(NSString*)placementID error:(NSError*)error extra:(NSDictionary*)extra {
     NSLog(@"HBInterstitialViewController::interstitialDidFailToPlayVideoForPlacementID:%@ error:%@ extra:%@", placementID, error, extra);
+    
+    [self showLog:[NSString stringWithFormat:@"interstitialDidFailToPlayVideoForPlacementID:%@ errorCode:%ld", placementID, error.code]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
 
 -(void) interstitialDidStartPlayingVideoForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBInterstitialViewController::interstitialDidStartPlayingVideoForPlacementID:%@ extra:%@", placementID, extra);
+    
+    [self showLog:[NSString stringWithFormat:@"HBInterstitialViewController::interstitialDidStartPlayingVideoForPlacementID:%@", placementID]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
 
 -(void) interstitialDidEndPlayingVideoForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBInterstitialViewController::interstitialDidEndPlayingVideoForPlacementID:%@ extra:%@", placementID, extra);
+    
+    [self showLog:[NSString stringWithFormat:@"interstitialDidEndPlayingVideoForPlacementID:%@", placementID]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
 
 -(void) interstitialDidCloseForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBInterstitialViewController::interstitialDidCloseForPlacementID:%@ extra:%@", placementID, extra);
+    
+    [self showLog:[NSString stringWithFormat:@"interstitialDidCloseForPlacementID:%@", placementID]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
 
 -(void) interstitialDidClickForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBInterstitialViewController::interstitialDidClickForPlacementID:%@ extra:%@", placementID, extra);
+    
+    [self showLog:[NSString stringWithFormat:@"interstitialDidClickForPlacementID:%@", placementID]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
 
 - (void)interstitialDeepLinkOrJumpForPlacementID:(NSString *)placementID extra:(NSDictionary *)extra result:(BOOL)success {
     NSLog(@"HBInterstitialViewController:: interstitialDeepLinkOrJumpForPlacementID:placementID:%@ with extra: %@, success:%@", placementID,extra, success ? @"YES" : @"NO");
-
+    
+    [self showLog:[NSString stringWithFormat:@"interstitialDeepLinkOrJumpForPlacementID:placementID:%@, success:%@", placementID, success ? @"YES" : @"NO"]];
+    
+    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
 }
+
+
+#pragma mark - lazy
+- (HBADFootView *)footView
+{
+    if (!_footView) {
+//        _footView = [[HBADFootView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScaleW(340))];
+//        _footView.removeBtn.hidden = YES;
+//        _footView.showBtn.frame = CGRectMake(kScaleW(26), kScaleW(230), (kScreenW - kScaleW(52)), kScaleW(90));
+        _footView = [[HBADFootView alloc] init];
+
+        __weak typeof(self) weakSelf = self;
+        [_footView setClickLoadBlock:^{
+            NSLog(@"点击加载");
+            [weakSelf loadAd];
+        }];
+        [_footView setClickReadyBlock:^{
+            NSLog(@"点击准备");
+            [weakSelf checkAd];
+        }];
+        [_footView setClickShowBlock:^{
+            NSLog(@"点击展示");
+            [weakSelf showAd];
+        }];
+    }
+    return _footView;
+}
+
+- (HBModelButton *)fullScreenBtn
+{
+    if (!_fullScreenBtn) {
+        _fullScreenBtn = [[HBModelButton alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScaleW(532))];
+        _fullScreenBtn.tag = 0;
+        _fullScreenBtn.backgroundColor = [UIColor whiteColor];
+        _fullScreenBtn.layer.borderWidth = kScaleW(5);
+        _fullScreenBtn.modelLabel.text = @"FullScreen";
+        _fullScreenBtn.image.image = [UIImage imageNamed:@"Interstitial-fullscreen"];
+        [_fullScreenBtn addTarget:self action:@selector(changeModel:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _fullScreenBtn;
+}
+
+- (HBModelButton *)interstitialBtn
+{
+    if (!_interstitialBtn) {
+        _interstitialBtn = [[HBModelButton alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScaleW(532))];
+        _interstitialBtn.tag = 1;
+        _interstitialBtn.backgroundColor = [UIColor whiteColor];
+        _interstitialBtn.layer.borderWidth = kScaleW(5);
+        _interstitialBtn.modelLabel.text = @"Interstitial";
+        _interstitialBtn.image.image = [UIImage imageNamed:@"Interstitial"];
+        [_interstitialBtn addTarget:self action:@selector(changeModel:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _interstitialBtn;
+}
+
+- (HBMenuView *)menuView
+{
+    if (!_menuView) {
+        _menuView = [[HBMenuView alloc] initWithMenuList:self.placementIDs.allKeys subMenuList:nil];
+        _menuView.turnAuto = true;
+        _menuView.layer.masksToBounds = YES;
+        _menuView.layer.cornerRadius = 5;
+        __weak typeof (self) weakSelf = self;
+        [_menuView setSelectMenu:^(NSString * _Nonnull selectMenu) {
+            weakSelf.placementID = weakSelf.placementIDs[selectMenu];
+            NSLog(@"select placementId:%@", weakSelf.placementID);
+            
+            if (weakSelf.isAuto) {
+                [[HBInterstitialAutoAdManager sharedInstance]addAutoLoadAdPlacementIDArray:@[weakSelf.placementID]];
+            }
+     
+        }];
+        
+        [_menuView setTurnOnAuto:^(Boolean isOn) {
+            [weakSelf turnOnAuto:isOn];
+        }];
+        
+    }
+    return _menuView;
+}
+
+-(void)turnOnAuto:(Boolean)isOn {
+    self.footView.loadBtn.hidden = isOn;
+    if (isOn) {
+       
+        [[HBInterstitialAutoAdManager sharedInstance]addAutoLoadAdPlacementIDArray:@[self.placementID]];
+    }
+    else{
+        [[HBInterstitialAutoAdManager sharedInstance]removeAutoLoadAdPlacementIDArray:@[self.placementID]];
+    }
+    self.isAuto = isOn;
+}
+
+- (UITextView *)textView
+{
+    if (!_textView) {
+        _textView = [[UITextView alloc] init];
+        _textView.backgroundColor = [UIColor whiteColor];
+        _textView.layer.masksToBounds = YES;
+        _textView.layer.cornerRadius = 5;
+        _textView.editable = NO;
+        _textView.text = @"";
+    }
+    return _textView;
+}
+
+- (HBSuspendedButton *)suspendedBtn
+{
+    if (!_suspendedBtn) {
+        _suspendedBtn = [[HBSuspendedButton alloc] initWithProtocolList:@[@"HBAdLoadingDelegate", @"HBInterstitialDelegate"]];
+        [_suspendedBtn setImage:[UIImage imageNamed:@"HyperBid_logo"] forState:UIControlStateNormal];
+        _suspendedBtn.layer.masksToBounds = YES;
+        _suspendedBtn.layer.cornerRadius = kScaleW(50);
+        _suspendedBtn.layer.borderWidth = kScaleW(1);
+        _suspendedBtn.layer.borderColor = [[UIColor grayColor] CGColor];
+    }
+    return _suspendedBtn;
+}
+
 @end

@@ -34,7 +34,7 @@ static NSString *const kKSPlacementID = @"b5e4613e50cbf2";
 
 @interface HBNativeBannerViewController ()<HBNativeBannerDelegate>
 @property(nonatomic, readonly) NSDictionary *placementIDs;
-@property(nonatomic, readonly) NSString *placementID;
+@property(nonatomic, copy) NSString *placementID;
 @property(nonatomic, readonly) NSString *name;
 @property(nonatomic, readonly) UIButton *reloadADButton;
 @property(nonatomic, readonly) UIButton *clearAdButton;
@@ -123,6 +123,15 @@ static NSString *const kKSPlacementID = @"b5e4613e50cbf2";
     } else {
         [HBNativeBannerWrapper loadNativeBannerAdWithPlacementID:_placementID extra:@{kHBExtraInfoNativeAdSizeKey:[NSValue valueWithCGSize:CGSizeMake(CGRectGetWidth(self.view.bounds), 120.0f)]} customData:nil delegate:self];
     }
+    
+    [self setupData];
+    
+}
+
+
+- (void)setupData
+{
+    self.placementID = self.placementIDs.allValues.firstObject;
 }
 
 -(void) readyButtonTapped {
