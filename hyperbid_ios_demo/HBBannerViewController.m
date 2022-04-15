@@ -23,10 +23,10 @@ static NSString *const kTTPlacementID = @"b5bacacfc470c9";
 static NSString *const kAdmobPlacementID = @"b5bacacef17717";
 static NSString *const kApplovinPlacementID = @"b5bacace1549da";
 static NSString *const kFacebookPlacementID = @"b5baf502bb23e3";
-static NSString *const kMopubPlacementID = @"b5baf57068e0b6";
+
 static NSString *const kInmobiPlacementID = @"b5baf522891992";
 static NSString *const kAllPlacementID = @"b5bacaccb61c29";
-static NSString *const kAppnextPlacementID = @"b5bc7fb78288e9";
+
 static NSString *const kBaiduPlacementID = @"b5c04dda229f7e";
 static NSString *const kUnityAdsPlacementID = @"b5c21a04406722";
 static NSString *const kNendPlacementID = @"b5cb96d97400b3";
@@ -38,19 +38,12 @@ static NSString *const kChartboostPlacementID = @"b5ee89f1a7eaf2";
 static NSString *const kVunglePlacementID = @"b5ee89f3e63d80";
 static NSString *const kAdColonyPlacementID = @"b5ee89f4d1791e";
 static NSString *const kGAMPlacementID = @"b5f2389932a2ec";
-static NSString *const kMyofferPlacementID = @"b5f33c3231eb91";
-static NSString *const kADXPlacementID = @"b5fa24ff8a7446";
-static NSString *const kOnlineApiPlacementID = @"b5fa2508fbdaf6";
+
+
 //static NSString *const kFacebookInHousePlacementID = @"b5d146f9483215";
 static NSString *const kKidozPlacementID = @"b5feaa2cfe2959";
 static NSString *const kMyTargetPlacementID = @"b5feaa31284737";
-static NSString *const kMobrainPlacementID = @"b601cac8974c40";
 
-#ifdef UNDER_DEVELOPMENT
-    static NSString *const kOFMBannerTestPlacementID = @"b600286067b736";
-#else
-    static NSString *const kOFMBannerTestPlacementID = @"b60001e71b4d74";
-#endif
 
 NSString *const kBannerShownNotification = @"banner_shown";
 NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
@@ -92,10 +85,9 @@ NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
                       kAdMobPlacement:kAdmobPlacementID,
                       kApplovinPlacement:kApplovinPlacementID,
                       kFacebookPlacement:kFacebookPlacementID,
-                      kMopubPlacementName:kMopubPlacementID,
                       kInmobiPlacement:kInmobiPlacementID,
                       kAllPlacementName:kAllPlacementID,
-                      kAppnextPlacement:kAppnextPlacementID,
+            
                       kBaiduPlacement:kBaiduPlacementID,
                       kUnityAdsPlacementName:kUnityAdsPlacementID,
                       kNendPlacement:kNendPlacementID,
@@ -107,12 +99,9 @@ NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
                       kChartboostPlacementName:kChartboostPlacementID,
                       kAdcolonyPlacementName:kAdColonyPlacementID,
                       kGAMPlacement:kGAMPlacementID,
-                      kMyOfferPlacement:kMyofferPlacementID,
-                      kADXPlacement:kADXPlacementID,
-                      kOnlineApiPlacement:kOnlineApiPlacementID,
+               
                       kKidozPlacement:kKidozPlacementID,
-                      kMyTargetPlacement:kMyTargetPlacementID,
-                      kMobrainPlacement:kMobrainPlacementID
+                      kMyTargetPlacement:kMyTargetPlacementID
                       };
     return self;
 }
@@ -133,15 +122,11 @@ NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
         @"Baidu":           @"b5c04dda229f7e",
         @"Fyber":           @"b5e96db4cb0682",
         @"Unity Ads":       @"b5c21a04406722",
-        @"Myoffer":         @"b5f33c3231eb91",
-        @"ADX":             @"b5fa24ff8a7446",
-        @"OnlineApi":       @"b5fa2508fbdaf6",
         @"Kidoz":           @"b5feaa2cfe2959",
         @"MyTarget":        @"b5feaa31284737",
         @"All":             @"b5bacaccb61c29",
         @"Gromore":         @"b601cac8974c40",
         @"Max":             @"b604080d063430",
-        @"DirectOffer":     @"b61bfff452d054",
         @"GDT":             @"b5bacad0803fd1"
     };
 }

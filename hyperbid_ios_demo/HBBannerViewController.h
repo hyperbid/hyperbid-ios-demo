@@ -11,9 +11,9 @@ extern NSString *const kInmobiPlacement;
 extern NSString *const kFacebookPlacement;
 extern NSString *const kAdMobPlacement;
 extern NSString *const kApplovinPlacement;
-extern NSString *const kMopubPlacementName;
+
 extern NSString *const kGDTPlacement;
-extern NSString *const kMopubVideoPlacementName;
+
 extern NSString *const kMintegralPlacement;
 extern NSString *const kTapjoyPlacementName;
 extern NSString *const kChartboostPlacementName;
@@ -23,7 +23,7 @@ extern NSString *const kAdcolonyPlacementName;
 extern NSString *const kUnityAdsPlacementName;
 extern NSString *const kAllPlacementName;
 extern NSString *const kTTPlacementName;
-extern NSString *const kAppnextPlacement;
+
 extern NSString *const kBaiduPlacement;
 extern NSString *const kNendPlacement;
 extern NSString *const kBannerShownNotification;
@@ -35,12 +35,10 @@ extern NSString *const kChartboostPlacementName;
 extern NSString *const kVunglePlacementName;
 extern NSString *const kAdcolonyPlacementName;
 extern NSString *const kGAMPlacement;
-extern NSString *const kMyOfferPlacement;
-extern NSString *const kADXPlacement;
-extern NSString *const kOnlineApiPlacement;
+
 extern NSString *const kKidozPlacement;
 extern NSString *const kMyTargetPlacement;
-extern NSString *const kMobrainPlacement;
+
 
 @interface HBBannerViewController : UIViewController
 -(instancetype) initWithPlacementName:(NSString*)name;

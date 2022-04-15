@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSInteger const HyperBidAPITypeHyperBid;
-extern NSInteger const HyperBidAPITypeOFM;
+
 
 @interface HyperBidAdManager : NSObject
 +(instancetype) sharedManager;

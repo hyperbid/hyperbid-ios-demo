@@ -18,11 +18,9 @@ extern NSString *const kBaiduPlacement;
 extern NSString *const kTTPlacementName;
 extern NSString *const kAdMobPlacement;
 extern NSString *const kKSPlacement;
-extern NSString *const kMyOfferPlacement;
-extern NSString *const kADXPlacement;
-extern NSString *const kOnlineApiPlacement;
+
 extern NSString *const kAllPlacementName;
-extern NSString *const kMobrainPlacement;
+
 
 @interface HBSplashViewController : UIViewController
 

@@ -13,7 +13,7 @@
 @import HyperBidSDK;
 
 NSInteger const HyperBidAPITypeHyperBid = 1;
-NSInteger const HyperBidAPITypeOFM = 2;
+
 
 
 @implementation HyperBidAdManager

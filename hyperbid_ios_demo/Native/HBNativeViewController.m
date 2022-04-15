@@ -29,11 +29,9 @@ NSString *const kAdMobPlacement = @"AdMob";
 NSString *const kApplovinPlacement = @"Applovin";
 NSString *const kMintegralAdvancedPlacement = @"Mintegral(Advanced)";
 NSString *const kMintegralPlacement = @"Mintegral";
-NSString *const kMopubPlacementName = @"Mopub";
-NSString *const kMopubVideoPlacementName = @"Mopub Video Placement";
 NSString *const kGDTPlacement = @"GDT";
 NSString *const kGDTTemplatePlacement = @"GDT(Template)";
-NSString *const kAppnextPlacement = @"Appnext";
+
 NSString *const kTTFeedPlacementName = @"TT(Feed)";
 NSString *const kTTDrawPlacementName = @"TT(Draw)";
 NSString *const kAllPlacementName = @"All";
@@ -41,8 +39,7 @@ NSString *const kNendVideoPlacement = @"Nend(Video)";
 NSString *const kSigmobPlacement = @"Sigmob";
 NSString *const kKSDrawPlacement = @"KS(Draw)";
 NSString *const kGAMPlacement = @"GAM";
-NSString *const kOnlineApiPlacement = @"OnlineApi";
-NSString *const kMobrainPlacement = @"Mobrain";
+
 
 static NSString *const kMPPlacementID = @"b5c2084d12aca4";
 static NSString *const kPlacement0ID = @"b5ad9ba61dcb39";
@@ -54,11 +51,9 @@ static NSString *const kFacebookPlacementID = @"b5b0f551340ea9";
 static NSString *const kFacebookHeaderBiddingPlacementID = @"b5d13342d52304";
 static NSString *const kAdMobPlacementID = @"b5b0f55228375a";
 static NSString *const kApplovinPlacementID = @"b5b0f554ec9c4e";
-static NSString *const kMopubPlacementID = @"b5b0f55624527a";
+
 static NSString *const kGDTPlacementID = @"b5bacac5f73476";
 static NSString *const kGDTTemplatePlacementID = @"b5bacac780e03b";
-static NSString *const kMopubVideoPlacementID = @"b5afbe325b1303";
-static NSString *const kAppnextPlacementID = @"b5bc7fb2787f1e";
 static NSString *const kAllPlacementID = @"b5b0f5663c6e4a";
 static NSString *const kTTFeedPlacementID = @"b5c2c6d50e7f44";
 static NSString *const kNendPlacementID = @"b5cb96d44c0c5f";
@@ -66,17 +61,9 @@ static NSString *const kNendVideoPlacementID = @"b5cb96d5291e93";
 static NSString *const kBaiduPlacementID = @"b5d36c4ad68a26";
 static NSString *const kKSPlacementID = @"b5e4613e50cbf2";//@"b5e43ac9ca3fc5";
 static NSString *const kGAMPlacementID = @"b5f238964f3e6f";
-static NSString *const kMyOfferPlacementID = @"b5f33878ee0646";
-static NSString *const kADXPlacementID = @"b5fa25023d0767";
-static NSString *const kOnlineApiPlacementID = @"b5fa2508579446";
-static NSString *const kMobrainPlacementID = @"b601cac6b99ead";
 static NSString *const kTTDrawPlacementID = @"b5c2c6d62b9d65";
 static NSString *const kSigmobPlacementID = @"b5d771f5a3458f";
-#ifdef UNDER_DEVELOPMENT
-    static NSString *const kOFMNativeTestPlacementID = @"b600285f12f41a";
-#else
-    static NSString *const kOFMNativeTestPlacementID = @"b60001e6f883da";
-#endif
+
 
 //static NSString *const kKSDrawPlcementID = @"b5e4613e50cbf2";
 //static NSString *const kTTDrawPlacementID = @"b5c2c6d62b9d65";
@@ -144,28 +131,20 @@ static NSString *const kCallbackKey = @"request";
              kFacebookPlacement:kFacebookPlacementID,
              kFacebookHeaderBiddingPlacement:kFacebookHeaderBiddingPlacementID,
              kAdMobPlacement:kAdMobPlacementID,
-             kMopubPlacementName:kMopubPlacementID,
-             kMopubVideoPlacementName:kMopubVideoPlacementID,
              kApplovinPlacement:kApplovinPlacementID,
              kGDTPlacement:kGDTPlacementID,
              kGDTTemplatePlacement:kGDTTemplatePlacementID,
-             kAppnextPlacement:kAppnextPlacementID,
              kTTFeedPlacementName:kTTFeedPlacementID,
              kNendPlacement:kNendPlacementID,
              kNendVideoPlacement:kNendVideoPlacementID,
              kBaiduPlacement:kBaiduPlacementID,
              kKSPlacement:kKSPlacementID,
-             kGAMPlacement:kGAMPlacementID,
-             kMyOfferPlacement:kMyOfferPlacementID,
-             kADXPlacement:kADXPlacementID,
-             kOnlineApiPlacement:kOnlineApiPlacementID,
-             kMobrainPlacement:kMobrainPlacementID
+             kGAMPlacement:kGAMPlacementID
              };
 }
 - (NSDictionary<NSString *,NSString *> *)placementIDs_native{
     
     return @{
-        kMyOfferPlacement:        kMyOfferPlacementID,
         kGAMPlacement:            kGAMPlacementID,
          kMintegralPlacement:     kMintegralPlacementID,
        kNendPlacement:                  kNendPlacementID,
@@ -175,16 +154,12 @@ static NSString *const kCallbackKey = @"request";
        kAdMobPlacement:                  kAdMobPlacementID,
         kInmobiPlacement:                  kInmobiPlacementID,
         kMintegralPlacement:               kMintegralPlacementID,
-        kMopubPlacementName:                  kMopubPlacementID,
         kGDTPlacement:      kGDTPlacementID,
        kGDTTemplatePlacement:           kGDTTemplatePlacementID,
-       kAppnextPlacement:                 kAppnextPlacementID,
         kBaiduPlacement:                   kBaiduPlacementID,
        kKSPlacement:                      kKSPlacementID,
-        kADXPlacement:                     kADXPlacementID,
-       kOnlineApiPlacement:               kOnlineApiPlacementID,
         kAllPlacementName:                    kAllPlacementID,
-        kSigmobPlacement:                kSigmobPlacementID,
+        kSigmobPlacement:                kSigmobPlacementID
       
     };
 }

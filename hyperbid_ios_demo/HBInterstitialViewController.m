@@ -25,7 +25,6 @@ NSString *const kStartAppPlacement = @"StartApp";
 NSString *const kStartAppVideoPlacement = @"StartApp(Video)";
 NSString *const kFyberPlacement = @"Fyber";
 NSString *const kSigmobRVIntPlacement = @"Sibmob(RV)";
-NSString *const kOFMPlacement = @"OFM";
 
 static NSString *const kGDTPlacementID = @"b5bacad8ea3036";
 static NSString *const kTTPlacementID = @"b5bacad7373b89";
@@ -39,13 +38,12 @@ static NSString *const kFacebookPlacementID = @"b5baf4bf9829e4";
 static NSString *const kFacebookHeaderBiddingPlacementID = @"b5d133421525a6";
 static NSString *const kAllPlacementID = @"b5bacad26a752a";
 static NSString *const kInmobiPlacementID = @"b5baf524062aca";
-static NSString *const kMopubPlacementID = @"b5baf56f03dbe9";
 static NSString *const kChartboostPlacementID = @"b5baf5cd422553";
 static NSString *const kTapjoyPlacementID = @"b5baf5ebe8df89";
 static NSString *const kIronsourcePlacementID = @"b5baf617891a2e";
 static NSString *const kVunglePlacementID = @"b5baf61edafdbb";
 static NSString *const kAdColonyPlacementID = @"b5baf620280a65";
-static NSString *const kAppnextPlacementID = @"b5bc7fb9cbfff1";
+
 static NSString *const kBaiduPlacementID = @"b5c04ddc6ba49e";
 static NSString *const kUnityAdsPlacementID = @"b5c21a055a51ab";
 static NSString *const kNendPlacementID = @"b5cb96db9b3b0f";
@@ -55,24 +53,17 @@ static NSString *const kMaioPlacementID = @"b5cb96cf795c4b";
 static NSString *const kSigmobPlacementID = @"b5ed8ceb5a286d";
 static NSString *const kSigmobIntRVPlacementID = @"b5d771f79e4a32";
 static NSString *const kKSPlacementID = @"b5d807a4846f50";
-static NSString *const kMyOfferPlacementID = @"b5db6c26999c31";
 static NSString *const kOguryPlacementID = @"b5dde238f2d2ce";
 static NSString *const kStartAppPlacementID = @"b5e731a0acabdf";
 static NSString *const kStartAppVideoPlacementID = @"b5e732a9577182";
 static NSString *const kFyberPlacementID = @"b5e96db2198474";
 static NSString *const kGAMPlacementID = @"b5f2389ab6ee63";
 static NSString *const kHeliumPlacementID = @"b5f583ec12143f";
-static NSString *const kADXPlacementID = @"b5fa25016e80bd";
-static NSString *const kOnlineApiPlacementID = @"b5fa250771e076";
+
 static NSString *const kKidozPlacementID = @"b5feaa2df0e121";
 static NSString *const kMyTargetPlacementID = @"b5feaa306e483c";
-static NSString *const kMobrainPlacementID = @"b601cac971d07c";
 
-#ifdef UNDER_DEVELOPMENT
-    static NSString *const kOFMPlacementID = @"b6002860de4410";
-#else
-    static NSString *const kOFMPlacementID = @"b60001e740f168";
-#endif
+
 
 @interface HBInterstitialViewController ()<HBInterstitialDelegate>
 @property(nonatomic, readonly) NSString *name;
@@ -119,14 +110,12 @@ static NSString *const kMobrainPlacementID = @"b601cac971d07c";
                       kFacebookPlacement:kFacebookPlacementID,
                       kFacebookHeaderBiddingPlacement:kFacebookHeaderBiddingPlacementID,
                       kInmobiPlacement:kInmobiPlacementID,
-                      kMopubPlacementName:kMopubPlacementID,
                       kChartboostPlacementName:kChartboostPlacementID,
                       kTapjoyPlacementName:kTapjoyPlacementID,
                       kIronsourcePlacementName:kIronsourcePlacementID,
                       kVunglePlacementName:kVunglePlacementID,
                       kAdcolonyPlacementName:kAdColonyPlacementID,
                       kAllPlacementName:kAllPlacementID,
-                      kAppnextPlacement:kAppnextPlacementID,
                       kBaiduPlacement:kBaiduPlacementID,
                       kUnityAdsPlacementName:kUnityAdsPlacementID,
                       kNendPlacement:kNendPlacementID,
@@ -136,19 +125,14 @@ static NSString *const kMobrainPlacementID = @"b601cac971d07c";
                       kSigmobPlacement:kSigmobPlacementID,
                       kSigmobRVIntPlacement:kSigmobIntRVPlacementID,
                       kKSPlacement:kKSPlacementID,
-                      kMyOfferPlacement:kMyOfferPlacementID,
                       kOguryPlacement:kOguryPlacementID,
                       kStartAppPlacement:kStartAppPlacementID,
                       kStartAppVideoPlacement:kStartAppVideoPlacementID,
                       kFyberPlacement:kFyberPlacementID,
                       kGAMPlacement:kGAMPlacementID,
                       kHeliumPlacement:kHeliumPlacementID,
-                      kADXPlacement:kADXPlacementID,
-                      kOnlineApiPlacement:kOnlineApiPlacementID,
                       kKidozPlacement:kKidozPlacementID,
-                      kMyTargetPlacement:kMyTargetPlacementID,
-                      kOFMPlacement:kOFMPlacementID,
-                      kMobrainPlacement:kMobrainPlacementID
+                      kMyTargetPlacement:kMyTargetPlacementID
                       };
     return  self;
 }
