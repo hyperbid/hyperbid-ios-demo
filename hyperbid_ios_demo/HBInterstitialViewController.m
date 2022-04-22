@@ -199,7 +199,7 @@ static NSString *const kMyTargetPlacementID = @"b5feaa306e483c";
     }];
 
     [self.footView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view.mas_bottom);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-30);
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
         make.height.mas_equalTo(kScaleW(340));
@@ -224,23 +224,23 @@ static NSString *const kMyTargetPlacementID = @"b5feaa306e483c";
     if ((self.fullScreenBtn.isSelected && sender == self.fullScreenBtn) || (self.interstitialBtn.isSelected && sender == self.interstitialBtn)) {
         return;
     }
-    self.fullScreenBtn.selected = sender == self.fullScreenBtn;
-    self.interstitialBtn.selected = sender == self.interstitialBtn;
+//    self.fullScreenBtn.selected = sender == self.fullScreenBtn;
+//    self.interstitialBtn.selected = sender == self.interstitialBtn;
     [self.fullScreenBtn setButtonIsSelectBoard];
     [self.interstitialBtn setButtonIsSelectBoard];
+//
     
-    
-    if (!self.interstitialBtn.isSelected) {
-        self.interstitialBtn.image.image = [UIImage imageNamed:@"banner_unselect"];
-    }else{
-        self.interstitialBtn.image.image = [UIImage imageNamed:@"banner"];
-    }
-    
-    if (!self.fullScreenBtn.isSelected) {
-        self.fullScreenBtn.image.image = [UIImage imageNamed:@"Interstitial-fullscreen_unselect"];
-    }else{
-        self.fullScreenBtn.image.image = [UIImage imageNamed:@"Interstitial-fullscreen"];
-    }
+//    if (!self.interstitialBtn.isSelected) {
+//        self.interstitialBtn.image.image = [UIImage imageNamed:@"banner_unselect"];
+//    }else{
+//        self.interstitialBtn.image.image = [UIImage imageNamed:@"banner"];
+//    }
+//
+//    if (!self.fullScreenBtn.isSelected) {
+//        self.fullScreenBtn.image.image = [UIImage imageNamed:@"Interstitial-fullscreen_unselect"];
+//    }else{
+//        self.fullScreenBtn.image.image = [UIImage imageNamed:@"Interstitial-fullscreen"];
+//    }
     
     
  
@@ -529,7 +529,7 @@ static NSString *const kMyTargetPlacementID = @"b5feaa306e483c";
         _interstitialBtn.backgroundColor = [UIColor whiteColor];
         _interstitialBtn.layer.borderWidth = kScaleW(5);
         _interstitialBtn.modelLabel.text = @"Interstitial";
-        _interstitialBtn.image.image = [UIImage imageNamed:@"Interstitial"];
+        _interstitialBtn.image.image = [UIImage imageNamed:@"banner"];
         [_interstitialBtn addTarget:self action:@selector(changeModel:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _interstitialBtn;

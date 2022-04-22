@@ -191,7 +191,7 @@ static NSString *const kMyTargetPlacementID = @"b5feaa2f32f161";
     }];
 
     [self.footView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view.mas_bottom);
+        make.bottom.equalTo(self.view.mas_bottom).offset(kScaleW(-30));
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
         make.height.mas_equalTo(kScaleW(340));

@@ -184,7 +184,7 @@ static NSString *const kCallbackKey = @"request";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Native";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = kRGB(245, 245, 245);
   
     [self setupUI];
     
@@ -246,7 +246,7 @@ static NSString *const kCallbackKey = @"request";
     }];
 
     [self.footView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom).offset(kScaleW(-30));
         make.left.equalTo(self.view);
         make.right.equalTo(self.view);
         make.height.mas_equalTo(kScaleW(340));

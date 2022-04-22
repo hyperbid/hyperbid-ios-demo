@@ -189,7 +189,7 @@ NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
     }];
 
     [self.footView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view.mas_bottom);
+        make.bottom.equalTo(self.view.mas_bottom).offset(kScaleW(-30));
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
         make.height.mas_equalTo(kScaleW(340));

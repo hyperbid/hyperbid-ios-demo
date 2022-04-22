@@ -45,7 +45,7 @@
 
 - (void)setButtonIsSelectBoard
 {
-    self.layer.borderColor = self.isSelected ? kRGB(73, 109, 255).CGColor : [UIColor whiteColor].CGColor;
+    self.layer.borderColor = self.isSelected ? mainColor.CGColor : [UIColor whiteColor].CGColor;
 }
 
 - (void)setSelectColor:(UIColor *)color
