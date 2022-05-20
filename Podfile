@@ -11,7 +11,7 @@ target 'hyperbid_ios_demo' do
 
   #hyperbid adapters
   pod 'HyperBidiOS/HyperBidFacebookAdapter','5.9.51'
-  # pod 'HyperBidiOS/HyperBidAdmobAdapter','5.9.51'
+  pod 'HyperBidiOS/HyperBidAdmobAdapter','5.9.51'
   pod 'HyperBidiOS/HyperBidGDTAdapter', '5.9.51'
   pod 'HyperBidiOS/HyperBidMintegralAdapter','5.9.51'
   pod 'HyperBidiOS/HyperBidApplovinAdapter','5.9.51'
@@ -34,7 +34,6 @@ target 'hyperbid_ios_demo' do
   pod 'HyperBidiOS/HyperBidMyTargetAdapter','5.9.51'
 
   pod 'FBAudienceNetwork' , '6.9.0'
-  pod 'Google-Mobile-Ads-SDK','8.13.0'
   pod 'PersonalizedAdConsent'
   pod 'Ads-Global', '3.9.0.4'
 
