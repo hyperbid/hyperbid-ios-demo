@@ -48,7 +48,7 @@ static NSString *const kIronsourceRVPlacementID = @"b5b44a0bf09475";//to be modi
 static NSString *const kVungleRVPlacementID = @"b5b44a0d05d707";//to be modified
 static NSString *const kAdcolonyRVPlacementID = @"b5b44a0de295ad";//to be modified
 static NSString *const kUnityAdsPlacementID = @"b5b44a0c7b9b64";//to be modified
-static NSString *const kAllPlacementID = @"b5b44a0f115321";
+static NSString *const kAllPlacementID = @"b61e06320c733e";
 static NSString *const kTTPlacementID = @"b5b72b21184aa8";
 static NSString *const kBaiduPlacementID = @"b5c04dd81c1af3";
 static NSString *const kNendPlacementID = @"b5cb96d6f68fdb";
@@ -297,6 +297,7 @@ static NSString *const kMyTargetPlacementID = @"b5feaa2f32f161";
 {
     self.textView.text = @"";
 }
+
 
 #pragma mark - loading delegate
 - (void)didStartLoadingADSourceWithPlacementID:(NSString *)placementID extra:(NSDictionary*)extra{

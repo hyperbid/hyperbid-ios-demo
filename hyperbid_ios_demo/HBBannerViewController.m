@@ -87,7 +87,6 @@ NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
                       kFacebookPlacement:kFacebookPlacementID,
                       kInmobiPlacement:kInmobiPlacementID,
                       kAllPlacementName:kAllPlacementID,
-            
                       kBaiduPlacement:kBaiduPlacementID,
                       kUnityAdsPlacementName:kUnityAdsPlacementID,
                       kNendPlacement:kNendPlacementID,
@@ -99,7 +98,6 @@ NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
                       kChartboostPlacementName:kChartboostPlacementID,
                       kAdcolonyPlacementName:kAdColonyPlacementID,
                       kGAMPlacement:kGAMPlacementID,
-               
                       kKidozPlacement:kKidozPlacementID,
                       kMyTargetPlacement:kMyTargetPlacementID
                       };

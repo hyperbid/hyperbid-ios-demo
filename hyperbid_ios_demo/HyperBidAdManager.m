@@ -14,6 +14,8 @@
 
 NSInteger const HyperBidAPITypeHyperBid = 1;
 
+#define HBID @"a61e062ded9a70"
+#define HBKey @"bd8af264b1a54c4deba868875ee89916"
 
 
 @implementation HyperBidAdManager
@@ -44,7 +46,7 @@ NSInteger const HyperBidAPITypeHyperBid = 1;
                                               kHBCustomDataIAPCurrencyKey:@"usd",
                                               kHBCustomDataSegmentIDKey:@16382351
         };
-        
+       [HBAPI setHeaderBiddingTestModeWithDeviceID:@"2C898254-0F15-463D-9D55-582CFE55E4B0"];
         //customData.channel&subchannel -> channel&subchannle
     //    [HBAPI sharedInstance].customData = @{kHBCustomDataChannelKey:@"custom_data_channel",
     //                                          kHBCustomDataSubchannelKey:@"custom_data_subchannel"
@@ -95,11 +97,11 @@ NSInteger const HyperBidAPITypeHyperBid = 1;
         if (@available(iOS 14, *)) {
             //iOS 14
             [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-                [[HBAPI sharedInstance] initWithAppID:@"a5b0e8491845b3" appKey:@"7eae0567827cfe2b22874061763f30c9" error:nil];
+                [[HBAPI sharedInstance] initWithAppID:HBID appKey:HBKey error:nil];
             }];
         } else {
             // Fallback on earlier versions
-            [[HBAPI sharedInstance] initWithAppID:@"a5b0e8491845b3" appKey:@"7eae0567827cfe2b22874061763f30c9" error:nil];
+            [[HBAPI sharedInstance] initWithAppID:HBID appKey:HBKey error:nil];
         }
 }
 

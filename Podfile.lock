@@ -21,11 +21,11 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - AppLovinSDK (10.3.5)
+  - AppLovinSDK (11.3.3)
   - AppsFlyerFramework (6.3.5):
     - AppsFlyerFramework/Main (= 6.3.5)
   - AppsFlyerFramework/Main (6.3.5)
-  - BaiduMobAdSDK (4.843)
+  - BaiduMobAdSDK (4.861)
   - ChartboostHelium (2.3.1):
     - ChartboostSDK
   - ChartboostSDK (8.4.2)
@@ -33,9 +33,9 @@ PODS:
   - Fyber_Marketplace_SDK (8.1.1):
     - Fyber_Marketplace_SDK/IASDKCore (= 8.1.1)
   - Fyber_Marketplace_SDK/IASDKCore (8.1.1)
-  - GDTMobSDK (4.13.41):
-    - GDTMobSDK/GDTMobSDK (= 4.13.41)
-  - GDTMobSDK/GDTMobSDK (4.13.41)
+  - GDTMobSDK (4.13.63):
+    - GDTMobSDK/GDTMobSDK (= 4.13.63)
+  - GDTMobSDK/GDTMobSDK (4.13.63)
   - Google-Mobile-Ads-SDK (8.13.0):
     - GoogleAppMeasurement (< 9.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
@@ -77,84 +77,78 @@ PODS:
   - "GoogleUtilities/NSData+zlib (7.7.0)"
   - GoogleUtilities/Reachability (7.7.0):
     - GoogleUtilities/Logger
-  - HyperBidiOS/HyperBidAdmobAdapter (5.8.14):
-    - Google-Mobile-Ads-SDK (= 8.13.0)
+  - HyperBidiOS/HyperBidApplovinAdapter (5.9.51):
+    - AppLovinSDK (= 11.3.3)
     - HyperBidiOS/HyperBidSDK
-  - HyperBidiOS/HyperBidApplovinAdapter (5.8.14):
-    - AppLovinSDK (= 10.3.5)
+  - HyperBidiOS/HyperBidBaiduAdapter (5.9.51):
+    - BaiduMobAdSDK (= 4.861)
     - HyperBidiOS/HyperBidSDK
-  - HyperBidiOS/HyperBidBaiduAdapter (5.8.14):
-    - BaiduMobAdSDK (= 4.843)
-    - HyperBidiOS/HyperBidSDK
-  - HyperBidiOS/HyperBidChartboostAdapter (5.8.14):
+  - HyperBidiOS/HyperBidChartboostAdapter (5.9.51):
     - ChartboostHelium (= 2.3.1)
     - ChartboostSDK (= 8.4.2)
     - HyperBidiOS/HyperBidSDK
-  - HyperBidiOS/HyperBidFacebookAdapter (5.8.14):
+  - HyperBidiOS/HyperBidFacebookAdapter (5.9.51):
     - FBAudienceNetwork (= 6.9.0)
     - HyperBidiOS/HyperBidSDK
-  - HyperBidiOS/HyperBidFyberAdapter (5.8.14):
+  - HyperBidiOS/HyperBidFyberAdapter (5.9.51):
     - Fyber_Marketplace_SDK (= 8.1.1)
     - HyperBidiOS/HyperBidSDK
-  - HyperBidiOS/HyperBidGDTAdapter (5.8.14):
-    - GDTMobSDK (= 4.13.41)
+  - HyperBidiOS/HyperBidGDTAdapter (5.9.51):
+    - GDTMobSDK (= 4.13.63)
     - HyperBidiOS/HyperBidSDK
-  - HyperBidiOS/HyperBidInmobiAdapter (5.8.14):
+  - HyperBidiOS/HyperBidInmobiAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
-    - InMobiSDK/Core (= 10.0.0)
-  - HyperBidiOS/HyperBidIronSourceAdapter (5.8.14):
+    - InMobiSDK/Core (= 10.0.5)
+  - HyperBidiOS/HyperBidIronSourceAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
-    - IronSourceSDK (= 7.1.14.0)
-  - HyperBidiOS/HyperBidKidozAdapter (5.8.14):
+    - IronSourceSDK (= 7.2.0.0)
+  - HyperBidiOS/HyperBidKidozAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
     - HyperBidKidozSDK (= 1.3.6)
-  - HyperBidiOS/HyperBidKSAdapter (5.8.14):
+  - HyperBidiOS/HyperBidKuaiShouAdapter (5.9.51):
     - AFNetworking
     - HyperBidiOS/HyperBidSDK
-    - KSAdSDK (= 3.3.18.1)
+    - KSAdSDK (= 3.3.23)
     - MJExtension
     - SDWebImage
-  - HyperBidiOS/HyperBidMaioAdapter (5.8.14):
+  - HyperBidiOS/HyperBidMaioAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
     - MaioSDK (= 1.5.8)
-  - HyperBidiOS/HyperBidMintegralAdapter (5.8.14):
+  - HyperBidiOS/HyperBidMintegralAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
-    - MintegralAdSDK/All (= 7.1.0)
-  - HyperBidiOS/HyperBidMyTargetAdapter (5.8.14):
+    - MintegralAdSDK/All (= 7.1.3)
+  - HyperBidiOS/HyperBidMyTargetAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
-    - myTargetSDK (= 5.13.0)
-  - HyperBidiOS/HyperBidNendAdapter (5.8.14):
+    - myTargetSDK (= 5.15.1)
+  - HyperBidiOS/HyperBidNendAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
     - NendSDK_iOS (= 7.0.6)
-  - HyperBidiOS/HyperBidOguryAdapter (5.8.14):
+  - HyperBidiOS/HyperBidOguryAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
     - OguryAds (= 2.4.1)
-  - HyperBidiOS/HyperBidPangleAdapter (5.8.14):
-    - Ads-Global (= 3.9.0.4)
+  - HyperBidiOS/HyperBidSDK (5.9.51)
+  - HyperBidiOS/HyperBidSigmobAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
-  - HyperBidiOS/HyperBidSDK (5.8.14)
-  - HyperBidiOS/HyperBidSigmobAdapter (5.8.14):
+    - SigmobAd-iOS (= 3.5.3)
+  - HyperBidiOS/HyperBidStartAppAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
-    - SigmobAd-iOS (= 3.5.0)
-  - HyperBidiOS/HyperBidStartAppAdapter (5.8.14):
+    - StartAppSDK (= 4.7.0)
+  - HyperBidiOS/HyperBidTapjoyAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
-    - StartAppSDK (= 4.5.0)
-  - HyperBidiOS/HyperBidTapjoyAdapter (5.8.14):
+    - TapjoySDK (= 12.9.0)
+  - HyperBidiOS/HyperBidUnityAdsAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
-    - TapjoySDK (= 12.8.1)
-  - HyperBidiOS/HyperBidUnityAdsAdapter (5.8.14):
+    - UnityAds (= 4.1.0)
+  - HyperBidiOS/HyperBidVungleAdapter (5.9.51):
     - HyperBidiOS/HyperBidSDK
-    - UnityAds (= 4.0.0)
-  - HyperBidiOS/HyperBidVungleAdapter (5.8.14):
-    - HyperBidiOS/HyperBidSDK
-    - VungleSDK-iOS (= 6.10.3)
+    - VungleSDK-iOS (= 6.10.6)
   - HyperBidKidozSDK (1.3.6)
-  - InMobiSDK/Core (10.0.0)
-  - IronSourceSDK (7.1.14.0)
-  - KSAdSDK (3.3.18.1)
+  - InMobiSDK/Core (10.0.5)
+  - IronSourceSDK (7.2.0.0)
+  - KSAdSDK (3.3.23)
   - MaioSDK (1.5.8)
   - Masonry (1.1.0)
-  - MintegralAdSDK/All (7.1.0.0):
+  - MintegralAdSDK/All (7.1.3.0):
     - MintegralAdSDK/BannerAd
     - MintegralAdSDK/BidNativeAd
     - MintegralAdSDK/InterstitialAd
@@ -164,28 +158,28 @@ PODS:
     - MintegralAdSDK/NewInterstitialAd
     - MintegralAdSDK/RewardVideoAd
     - MintegralAdSDK/SplashAd
-  - MintegralAdSDK/BannerAd (7.1.0.0):
+  - MintegralAdSDK/BannerAd (7.1.3.0):
     - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/BidNativeAd (7.1.0.0):
+  - MintegralAdSDK/BidNativeAd (7.1.3.0):
     - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/InterstitialAd (7.1.0.0):
+  - MintegralAdSDK/InterstitialAd (7.1.3.0):
     - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/InterstitialVideoAd (7.1.0.0):
+  - MintegralAdSDK/InterstitialVideoAd (7.1.3.0):
     - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/NativeAd (7.1.0.0)
-  - MintegralAdSDK/NativeAdvancedAd (7.1.0.0):
+  - MintegralAdSDK/NativeAd (7.1.3.0)
+  - MintegralAdSDK/NativeAdvancedAd (7.1.3.0):
     - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/NewInterstitialAd (7.1.0.0):
+  - MintegralAdSDK/NewInterstitialAd (7.1.3.0):
     - MintegralAdSDK/InterstitialVideoAd
     - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/RewardVideoAd (7.1.0.0):
+  - MintegralAdSDK/RewardVideoAd (7.1.3.0):
     - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/SplashAd (7.1.0.0):
+  - MintegralAdSDK/SplashAd (7.1.3.0):
     - MintegralAdSDK/NativeAd
   - MJExtension (3.4.1)
-  - myTargetSDK (5.13.0):
-    - myTrackerSDK (= 3.0.2)
-  - myTrackerSDK (3.0.2)
+  - myTargetSDK (5.15.1):
+    - myTrackerSDK (~> 3.0.3)
+  - myTrackerSDK (3.0.6)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -200,42 +194,40 @@ PODS:
   - SDWebImage (5.12.5):
     - SDWebImage/Core (= 5.12.5)
   - SDWebImage/Core (5.12.5)
-  - SigmobAd-iOS (3.5.0):
-    - SigmobAd-iOS/WindSDK (= 3.5.0)
-  - SigmobAd-iOS/WindSDK (3.5.0)
-  - StartAppSDK (4.5.0)
-  - TapjoySDK (12.8.1)
-  - UnityAds (4.0.0)
-  - VungleSDK-iOS (6.10.3)
+  - SigmobAd-iOS (3.5.3):
+    - SigmobAd-iOS/WindSDK (= 3.5.3)
+  - SigmobAd-iOS/WindSDK (3.5.3)
+  - StartAppSDK (4.7.0)
+  - TapjoySDK (12.9.0)
+  - UnityAds (4.1.0)
+  - VungleSDK-iOS (6.10.6)
 
 DEPENDENCIES:
   - Ads-Global (= 3.9.0.4)
   - AppsFlyerFramework (= 6.3.5)
   - FBAudienceNetwork (= 6.9.0)
   - Google-Mobile-Ads-SDK (= 8.13.0)
-  - HyperBidiOS/HyperBidAdmobAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidApplovinAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidBaiduAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidChartboostAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidFacebookAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidFyberAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidGDTAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidInmobiAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidIronSourceAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidKidozAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidKSAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidMaioAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidMintegralAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidMyTargetAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidNendAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidOguryAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidPangleAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidSDK (= 5.8.14)
-  - HyperBidiOS/HyperBidSigmobAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidStartAppAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidTapjoyAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidUnityAdsAdapter (= 5.8.14)
-  - HyperBidiOS/HyperBidVungleAdapter (= 5.8.14)
+  - HyperBidiOS/HyperBidApplovinAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidBaiduAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidChartboostAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidFacebookAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidFyberAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidGDTAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidInmobiAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidIronSourceAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidKidozAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidKuaiShouAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidMaioAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidMintegralAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidMyTargetAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidNendAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidOguryAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidSDK (= 5.9.51)
+  - HyperBidiOS/HyperBidSigmobAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidStartAppAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidTapjoyAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidUnityAdsAdapter (= 5.9.51)
+  - HyperBidiOS/HyperBidVungleAdapter (= 5.9.51)
   - Masonry
   - PersonalizedAdConsent
 
@@ -281,41 +273,41 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Ads-Global: 371ecc237669dd564ead2ff8ea6b5255211f8d25
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  AppLovinSDK: 3188b9df77128b503cea9822b77e1b4fe7e4761b
+  AppLovinSDK: 6ed446d284d8852520a786ad5a91796f1730c3f3
   AppsFlyerFramework: fa7e2e8234e6d285256bcb948eb2b77aee84ba81
-  BaiduMobAdSDK: 2593c30f6cc4b6fee187630135c9b56436b109fd
+  BaiduMobAdSDK: 23e9ca38da6685dd35bb1a32540ff20353ec2361
   ChartboostHelium: 7fb828619969fdc9ca74fb9e5e73016a86243c51
   ChartboostSDK: 7c12ef46358d70703bcc978a185d9ac4372065fb
   FBAudienceNetwork: 83096d73433759c10f9cf9b3bad5e5cff58694cb
   Fyber_Marketplace_SDK: 5e9b82790e268adfe3ef8decc5eaed81c600760e
-  GDTMobSDK: 1fef5d6147cca39a24a8b3925661bfc4c5b71608
+  GDTMobSDK: c9ae3dbf28ddd78164aaf0f8c58c5a869b0ae420
   Google-Mobile-Ads-SDK: 05e5d68bb42a61b2e5bef336a52789785605aa22
   GoogleAppMeasurement: 71156240babd3cc6ced03e0d54816f01a880c730
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
-  HyperBidiOS: adfbfa201662e5f8887186ed5139a1251d6b72ae
+  HyperBidiOS: f5a4116bb303417abec108eda1e1516e3acc1ba4
   HyperBidKidozSDK: d45134af4daaeea3a1dbdf1de89642ed759deb01
-  InMobiSDK: 68c8a43f81d76b9331c29b84ae6a19867ee12748
-  IronSourceSDK: 7359355050983d7efb5bb779f9129a32138c3c22
-  KSAdSDK: c6e0e8cf683fe91974e331dca4ce78d99a6343f0
+  InMobiSDK: eea7bd698847e9ca88e4721ca9e9c7039f0e671d
+  IronSourceSDK: 6420dba7fc174cdbfd0bc3141ecad83c3e58cccc
+  KSAdSDK: 57b85bc6a7ae560ee67cae70da5d0d6875125d9e
   MaioSDK: 873950cab1bdba6dce0b94b82974d6cec8f99368
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MintegralAdSDK: a4d75bc67e67cd12f860fd3676077ac63f3cb246
+  MintegralAdSDK: bcad285bd359805ec40da6cc9e772187a0e07cba
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
-  myTargetSDK: b2053eaff81daeac26da171c708179e99cff1fdf
-  myTrackerSDK: c6e9ee6e10e05977c00299ed7e424812557b2054
+  myTargetSDK: be478c3ee5661bcfb97b6608f513bb20156434b9
+  myTrackerSDK: 4fc38a0c56573d58761f3e85dbad483077fd0d2d
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NendSDK_iOS: 43c45dad9195c8e814c2da6497fe3d66515fb982
   OguryAds: ede25803e572b5eee27a832f6ef5f3a171c20ef1
   PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
   SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
-  SigmobAd-iOS: cdfccae3ca7f730d83b0cd805fc240fa2dec440b
-  StartAppSDK: d4680feb85ffb81d42b247f1a68affb56625ba7e
-  TapjoySDK: 6d344dfb0cd205014c9286580d5c97857b170402
-  UnityAds: 9649e17d2d255f91c0a84e00062a0d07d8fba8a5
-  VungleSDK-iOS: b370edd2e5787ecb25fc9332941deb1e1ca8176e
+  SigmobAd-iOS: 3b63fe0d3db023fad72bebe82cddd29e0b44ab40
+  StartAppSDK: 5082da354bbe154db3e2178a55467e8d704c08e4
+  TapjoySDK: 5112f24a9d6e4e78e7b88253ab98e07d1556c2f9
+  UnityAds: 840c036310722cc4b78abc97fe5031d3d1eb2b06
+  VungleSDK-iOS: c43c627392eaf4ceda029f069b8e458cc6fe112a
 
-PODFILE CHECKSUM: 9ab8ae9df47f7a0cb6897527f6977a18165c7130
+PODFILE CHECKSUM: 8f5871924d162e231b213b2e2061e711168e8146
 
 COCOAPODS: 1.11.2
