@@ -41,6 +41,7 @@ extern NSString *const kGAMPlacement;
 extern NSString *const kHeliumPlacement;
 extern NSString *const kKidozPlacement;
 extern NSString *const kMyTargetPlacement;
+extern NSString * const kYandexPlacement;
 
 
 

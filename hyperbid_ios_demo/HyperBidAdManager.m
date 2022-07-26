@@ -97,11 +97,11 @@ NSInteger const HyperBidAPITypeHyperBid = 1;
         if (@available(iOS 14, *)) {
             //iOS 14
             [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-                [[HBAPI sharedInstance] initWithAppID:HBID appKey:HBKey error:nil];
+                [[HBAPI sharedInstance] startWithAppID:HBID appKey:HBKey error:nil];
             }];
         } else {
             // Fallback on earlier versions
-            [[HBAPI sharedInstance] initWithAppID:HBID appKey:HBKey error:nil];
+            [[HBAPI sharedInstance] startWithAppID:HBID appKey:HBKey error:nil];
         }
 }
 

@@ -44,7 +44,7 @@ static NSString *const kGAMPlacementID = @"b5f2389932a2ec";
 static NSString *const kKidozPlacementID = @"b5feaa2cfe2959";
 static NSString *const kMyTargetPlacementID = @"b5feaa31284737";
 
-
+static NSString *const kYandexPlacementID = @"b62da853212119";
 NSString *const kBannerShownNotification = @"banner_shown";
 NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
 @interface HBBannerViewController ()<HBBannerDelegate>
@@ -80,6 +80,7 @@ NSString *const kBannerLoadingFailedNotification = @"banner_failed_to_load";
 -(instancetype)init{
     self = [super init];
     _placementIDs = @{
+        kYandexPlacement:kYandexPlacementID,
                       kGDTPlacement:kGDTPlacementID,
                       kTTPlacementName:kTTPlacementID,
                       kAdMobPlacement:kAdmobPlacementID,

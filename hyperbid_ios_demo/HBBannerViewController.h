@@ -23,7 +23,6 @@ extern NSString *const kAdcolonyPlacementName;
 extern NSString *const kUnityAdsPlacementName;
 extern NSString *const kAllPlacementName;
 extern NSString *const kTTPlacementName;
-
 extern NSString *const kBaiduPlacement;
 extern NSString *const kNendPlacement;
 extern NSString *const kBannerShownNotification;
@@ -35,7 +34,7 @@ extern NSString *const kChartboostPlacementName;
 extern NSString *const kVunglePlacementName;
 extern NSString *const kAdcolonyPlacementName;
 extern NSString *const kGAMPlacement;
-
+extern NSString * const kYandexPlacement;
 extern NSString *const kKidozPlacement;
 extern NSString *const kMyTargetPlacement;
 

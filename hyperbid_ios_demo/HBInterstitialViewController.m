@@ -63,7 +63,7 @@ static NSString *const kHeliumPlacementID = @"b5f583ec12143f";
 static NSString *const kKidozPlacementID = @"b5feaa2df0e121";
 static NSString *const kMyTargetPlacementID = @"b5feaa306e483c";
 
-
+static NSString *const kYandexPlacementID = @"b62da7f0b61c3en4";
 
 @interface HBInterstitialViewController ()<HBInterstitialDelegate>
 @property(nonatomic, readonly) NSString *name;
@@ -99,6 +99,7 @@ static NSString *const kMyTargetPlacementID = @"b5feaa306e483c";
     self = [super init];
     
     _placementIDs = @{
+        kYandexPlacement:kYandexPlacementID,
                       kGDTPlacement:kGDTPlacementID,
                       kTTPlacementName:kTTPlacementID,
                       kTTVideoPlacement:kTTVideoPlacementID,
@@ -266,7 +267,7 @@ static NSString *const kMyTargetPlacementID = @"b5feaa306e483c";
 }
 
 -(void) clearAdButtonTapped {
-    [[HBAdManager sharedManager] clearCache];
+//    [[HBAdManager sharedManager] clearCache];
 }
 
 -(void) dealloc {

@@ -2,24 +2,21 @@
 //  HBNativeViewController.m
 //  HyperBidSDKDemo
 //
-//  Created by Leo on 17/04/2018.
-//  Copyright © 2018 Leo. All rights reserved.
+//  Created by mac on 2021/12/6.
 //
 
-#define NATIVE_INTEGRATED
-
 #import "HBNativeViewController.h"
-#import "MTAutolayoutCategories.h"
-#import "HyperBidAdManager.h"
 #import "HBADFootView.h"
 #import "HBModelButton.h"
-#import "HBNativeRenderView.h"
+//#import "HBNativeRenderView.h"
 #import "HBNativeMessageStreamViewController.h"
 #import "HBDrawViewController.h"
 #import "HBNativeShowViewController.h"
-#import "DMADView.h"
 #import "HBMenuView.h"
 #import "HBSuspendedButton.h"
+#import <Masonry/Masonry.h>
+#import <SDWebImage/SDWebImage.h>
+#import "HBNativeSelfRenderView.h"
 
 NSString *const kMPPlacement = @"MobPower";
 NSString *const kInmobiPlacement = @"Inmobi";
@@ -64,20 +61,10 @@ static NSString *const kGAMPlacementID = @"b5f238964f3e6f";
 static NSString *const kTTDrawPlacementID = @"b5c2c6d62b9d65";
 static NSString *const kSigmobPlacementID = @"b5d771f5a3458f";
 
+@import HyperBidNative;
 
-//static NSString *const kKSDrawPlcementID = @"b5e4613e50cbf2";
-//static NSString *const kTTDrawPlacementID = @"b5c2c6d62b9d65";
+@interface HBNativeViewController () <HBAdLoadingDelegate, HBNativeADDelegate>
 
-#ifdef NATIVE_INTEGRATED
-
-
-#endif
-
-#ifdef NATIVE_INTEGRATED
-@interface HBNativeViewController()<HBNativeADDelegate>
-#else
-@interface HBNativeViewController()
-#endif
 @property (nonatomic, strong) HBADFootView *footView;
 
 @property (nonatomic, strong) HBModelButton *nativeBtn;
@@ -90,7 +77,8 @@ static NSString *const kSigmobPlacementID = @"b5d771f5a3458f";
 
 @property (nonatomic, strong) UITextView *textView;
 
-@property(nonatomic) DMADView *adView;
+@property(nonatomic) HBNativeADView *adView;
+
 
 @property (nonatomic, strong) HBSuspendedButton *suspendedBtn;
 
@@ -100,97 +88,86 @@ static NSString *const kSigmobPlacementID = @"b5d771f5a3458f";
 @property (copy, nonatomic) NSDictionary<NSString *, NSString *> *placementIDs_draw;
 @property (copy, nonatomic) NSDictionary<NSString *, NSString *> *placementIDs_preRoll;
 @property (copy, nonatomic) NSDictionary<NSString *, NSString *> *placementIDs;
-
+@property(nonatomic,retain) UIView * renderView;
 @property (nonatomic, copy) NSString *nativeStr;
 
 @property (nonatomic, strong) UIView *showView;
 
 @property(nonatomic, strong) NSString *togetherLoadAdStr;
 
+@property(nonatomic, strong) HBNativeSelfRenderView *nativeSelfRenderView;
+@property(nonatomic,retain) UIImageView * iconview;
 
 @end
-static NSString *const kLoadKey = @"load";
-static NSString *const kCallbackKey = @"request";
+
 @implementation HBNativeViewController
-#ifdef NATIVE_INTEGRATED
 
--(instancetype)init{
-    self = [super init];
-    _placementIDs = [HBNativeViewController nativePlacementIDs];
-    return  self;
-    
-}
-+(NSDictionary<NSString*, NSString*>*)nativePlacementIDs {
-    return @{
-             kMPPlacement:kMPPlacementID,
-             kMintegralPlacement:kMintegralPlacementID,
-             kMintegralAdvancedPlacement:kMintegralAdvancedPlacementID,
-             kHeaderBiddingPlacement:kMintegralHeaderBiddingPlacementID,
-             kAllPlacementName:kAllPlacementID,
-             kInmobiPlacement:kInmobiPlacementID,
-             kFacebookPlacement:kFacebookPlacementID,
-             kFacebookHeaderBiddingPlacement:kFacebookHeaderBiddingPlacementID,
-             kAdMobPlacement:kAdMobPlacementID,
-             kApplovinPlacement:kApplovinPlacementID,
-             kGDTPlacement:kGDTPlacementID,
-             kGDTTemplatePlacement:kGDTTemplatePlacementID,
-             kTTFeedPlacementName:kTTFeedPlacementID,
-             kNendPlacement:kNendPlacementID,
-             kNendVideoPlacement:kNendVideoPlacementID,
-             kBaiduPlacement:kBaiduPlacementID,
-             kKSPlacement:kKSPlacementID,
-             kGAMPlacement:kGAMPlacementID
-             };
-}
-- (NSDictionary<NSString *,NSString *> *)placementIDs_native{
-    
-    return @{
-        kGAMPlacement:            kGAMPlacementID,
-         kMintegralPlacement:     kMintegralPlacementID,
-       kNendPlacement:                  kNendPlacementID,
-      kNendVideoPlacement:             kNendVideoPlacementID,
-       kTTFeedPlacementName:                kTTFeedPlacementID,
-       kFacebookPlacement:                kFacebookPlacementID,
-       kAdMobPlacement:                  kAdMobPlacementID,
-        kInmobiPlacement:                  kInmobiPlacementID,
-        kMintegralPlacement:               kMintegralPlacementID,
-        kGDTPlacement:      kGDTPlacementID,
-       kGDTTemplatePlacement:           kGDTTemplatePlacementID,
-        kBaiduPlacement:                   kBaiduPlacementID,
-       kKSPlacement:                      kKSPlacementID,
-        kAllPlacementName:                    kAllPlacementID,
-        kSigmobPlacement:                kSigmobPlacementID
-      
-    };
-}
-- (NSDictionary<NSString *,NSString *> *)placementIDs_draw{
-    
-    return @{
-        kTTDrawPlacementName: kTTDrawPlacementID,
-        kKSPlacement:         kKSPlacementID,
-    };
-}
-- (NSDictionary<NSString *,NSString *> *)placementIDs_preRoll{
-    return @{
-        kTTFeedPlacementName: kTTFeedPlacementID
-    };
-}
-
-
-+(NSString*)numberOfLoadPath {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"native_load"];
+- (void)dealloc
+{
+    NSLog(@"🔥----ATNativeViewController销毁%@", NSStringFromSelector(_cmd));
+    [self removeAd];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Native";
+    // Do any additional setup after loading the view.
     self.view.backgroundColor = kRGB(245, 245, 245);
-  
+    self.title = @"Native";
+    [self setupData];
     [self setupUI];
-    
     [self changeModel:self.nativeBtn];
+}
+
+- (void)setupData
+{
+    self.placementID = self.placementIDs.allValues.firstObject;
+}
+
+- (NSDictionary<NSString *,NSString *> *)placementIDs_native{
     
+    return @{
+        @"MyOffer":                 @"b5f33878ee0646",
+        @"GAM":                     @"b5f238964f3e6f",
+        @"Mintegral-(Advanced)":    @"b5ee1d26cb56ee",
+        @"Header Bidding":          @"b5d1333d023691",
+        @"Nend":                    @"b5cb96d44c0c5f",
+        @"Nend-(Video)":            @"b5cb96d5291e93",
+        @"TT-(Feed)":               @"b5c2c6d50e7f44",
+        @"Pangle":                  @"b612f6a831fe71",
+        @"MobPower":                @"b5c2084d12aca4",
+        @"Facebook":                @"b5b0f551340ea9",
+        @"Facebook(NativeBanner)":  @"b5ee89fd60cddc",
+        @"AdMob":                   @"b5b0f55228375a",
+        @"Inmobi":                  @"b5b0f553483724",
+        @"Mintegral":               @"b5b0f555698607",
+        @"GDT-(self randerer)":     @"b5bacac5f73476",
+        @"GDT-(Template)":          @"b5bacac780e03b",
+        @"Vungle":@"b62a6f6d459cf5",
+        @"Baidu":                   @"b5d36c4ad68a26",
+        @"KS":                      @"b5e4613e50cbf2",
+        @"ADX":                     @"b5fa25023d0767",
+        @"OnlineApi":               @"b5fa2508579446",
+        @"All":                     @"b5b0f5663c6e4a",
+        @"Gromore":                 @"b601cac6b99ead",
+        @"Sigmob":                  @"b6170cda99de6d",
+        @"DirectOffer":             @"b61bfff2c812cb",
+        @"Klevin":                  @"b6172985f45143",
+        @"MyTarget":                @"b625ce4791005d",
+        @"DSP":                     @"b628f3c9eb47db",
+    };
+}
+
+- (NSDictionary<NSString *,NSString *> *)placementIDs_draw{
     
+    return @{
+        @"TT(Draw)":                @"b5c2c6d62b9d65",
+        @"KS(Draw)":                @"b5e5ce042cabfb",
+    };
+}
+- (NSDictionary<NSString *,NSString *> *)placementIDs_preRoll{
+    return @{
+        @"TT(Feed)":                @"b5c2c6d50e7f44"
+    };
 }
 
 - (void)setupUI
@@ -208,12 +185,16 @@ static NSString *const kCallbackKey = @"request";
     [self.view addSubview:self.menuView];
     [self.view addSubview:self.textView];
     [self.view addSubview:self.footView];
-//    [self.view addSubview:self.suspendedBtn];
+    [self.view addSubview:self.suspendedBtn];
+    
+    
+    
+    
     
     [self.nativeBtn mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo((kScreenW - kScaleW(26) * 4) / 3);
         make.height.mas_equalTo(kScaleW(360));
-        make.top.equalTo(self.view.mas_top).offset( kScaleW(20));
+        make.top.equalTo(self.view.mas_top).offset(kNavigationBarHeight + kScaleW(20));
         make.left.equalTo(self.view.mas_left).offset(kScaleW(26));
     }];
 
@@ -221,14 +202,14 @@ static NSString *const kCallbackKey = @"request";
         make.left.equalTo(self.nativeBtn.mas_right).offset(kScaleW(26));
         make.width.mas_equalTo((kScreenW - kScaleW(26) * 4) / 3);
         make.height.mas_equalTo(self.nativeBtn.mas_height);
-        make.top.equalTo(self.view.mas_top).offset( kScaleW(20));
+        make.top.equalTo(self.view.mas_top).offset(kNavigationBarHeight + kScaleW(20));
     }];
 
     [self.preRollBtn mas_updateConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view.mas_right).offset(kScaleW(-26));
         make.width.mas_equalTo((kScreenW - kScaleW(26) * 4) / 3);
         make.height.mas_equalTo(self.nativeBtn.mas_height);
-        make.top.equalTo(self.view.mas_top).offset(kScaleW(20));
+        make.top.equalTo(self.view.mas_top).offset(kNavigationBarHeight + kScaleW(20));
     }];
 
     [self.menuView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -246,24 +227,19 @@ static NSString *const kCallbackKey = @"request";
     }];
 
     [self.footView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view.mas_bottom).offset(kScaleW(-30));
+        make.bottom.equalTo(self.view);
         make.left.equalTo(self.view);
         make.right.equalTo(self.view);
         make.height.mas_equalTo(kScaleW(340));
     }];
     
-//    [self.suspendedBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.height.mas_equalTo(kScaleW(100));
-//        make.top.equalTo(self.view.mas_top).offset(kScaleW(200));
-//        make.right.equalTo(self.view.mas_right);
-//    }];
-    
-    [self setupData];
+    [self.suspendedBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(kScaleW(100));
+        make.top.equalTo(self.view.mas_top).offset(kScaleW(200));
+        make.right.equalTo(self.view.mas_right);
+    }];
 }
-- (void)setupData
-{
-    self.placementID = self.placementIDs.allValues.firstObject;
-}
+
 #pragma mark - together load
 - (void)togetherLoadAd:(NSString *)togetherLoadAdStr{
     self.togetherLoadAdStr = togetherLoadAdStr;
@@ -306,46 +282,31 @@ static NSString *const kCallbackKey = @"request";
         self.preRollBtn.selected = NO;
         self.placementIDs = self.placementIDs_native;
         [self.menuView showSubMenu];
+        
+       
+        
     } else if (sender.tag == 1) {
         self.nativeBtn.selected = NO;
         self.drawBtn.selected = YES;
         self.preRollBtn.selected = NO;
         self.placementIDs = self.placementIDs_draw;
         [self.menuView hiddenSubMenu];
+        
+      
     } else {
         self.nativeBtn.selected = NO;
         self.drawBtn.selected = NO;
         self.preRollBtn.selected = YES;
         self.placementIDs = self.placementIDs_preRoll;
         [self.menuView hiddenSubMenu];
+        
+        
     }
     [self.nativeBtn setButtonIsSelectBoard];
     [self.drawBtn setButtonIsSelectBoard];
     [self.preRollBtn setButtonIsSelectBoard];
     
-    
-    if (self.nativeBtn.isSelected) {
-        self.nativeBtn.image.image = [UIImage imageNamed:@"Native"];
-    }else{
-        self.nativeBtn.image.image = [UIImage imageNamed:@"Native_unselect"];
-    }
-    
-    if (self.drawBtn.isSelected) {
-        self.drawBtn.image.image = [UIImage imageNamed:@"Vertical Draw video"];
-    }else{
-        self.drawBtn.image.image = [UIImage imageNamed:@"Vertical Draw video_unselect"];
-    }
-    
-
-    if (self.preRollBtn.isSelected) {
-        self.preRollBtn.image.image = [UIImage imageNamed:@"Pre-roll AD"];
-    }else{
-        self.preRollBtn.image.image = [UIImage imageNamed:@"Pre-roll AD_unselect"];
-    }
-    
     [self resetPlacementID];
-    
-    
 }
 
 - (void)resetPlacementID {
@@ -356,7 +317,16 @@ static NSString *const kCallbackKey = @"request";
 
 - (void)loadAd
 {
-    CGSize size = CGSizeMake(CGRectGetWidth(self.view.bounds) - 30.0f, 351.0f);
+    
+    
+    
+    if (self.adView) {
+        [self.adView clearAdCache];
+        self.adView = nil;
+        [self.renderView removeFromSuperview];
+    }
+    
+    CGSize size = CGSizeMake(kScreenW, 350);
     if ([self.placementIDs_draw.allValues containsObject:self.placementID]) {
         size = self.view.frame.size;
     }
@@ -375,7 +345,7 @@ static NSString *const kCallbackKey = @"request";
 {
     // list
     NSArray *array = [[HBAdManager sharedManager] getNativeValidAdsForPlacementID:self.placementID];
-    NSLog(@"ValidAds -- %@",array);
+    NSLog(@"ValidAds.count:%ld--- ValidAds:%@",array.count,array);
 
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:[[HBAdManager sharedManager] isReadyNativeAdWithPlacementID:self.placementID] ? @"Ready!" : @"Not Yet!" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [self presentViewController:alert animated:YES completion:^{
@@ -387,91 +357,69 @@ static NSString *const kCallbackKey = @"request";
 
 - (void)showAd
 {
+    
+    BOOL ready = [[HBAdManager sharedManager] isReadyNativeAdWithPlacementID:self.placementID];
+    
+    if (ready == NO) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not Yet!" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:alert animated:YES completion:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            });
+        }];
+        return;
+    }
+    
     if (self.nativeBtn.isSelected && [self.nativeStr isEqualToString:@"Native List"]) {
         // 列表
-        HBNativeADConfiguration *config = [[HBNativeADConfiguration alloc] init];
-        config.ADFrame = CGRectMake(.0f, 100.0f, CGRectGetWidth(self.view.bounds), 350.0f);
-        config.mediaViewFrame = CGRectMake(0, 150.0f, CGRectGetWidth(self.view.bounds), 350.0f - 150.0f);
-        config.delegate = self;
-        config.sizeToFit = YES;
-        // 临时,只在 demo 用.
-        config.renderingViewClass = [DMADView class];
-        config.rootViewController = self;
-        config.context = @{
-            
-            kHBNativeAdConfigurationContextAdOptionsViewFrameKey:[NSValue valueWithCGRect:CGRectMake(CGRectGetWidth(self.view.bounds) - 43.0f, .0f, 43.0f, 18.0f)],
-            
-            kHBNativeAdConfigurationContextAdLogoViewFrameKey:[NSValue valueWithCGRect:CGRectMake(.0f, .0f, 54.0f, 18.0f)],
-            
-            kHBNativeAdConfigurationContextNetworkLogoViewFrameKey:[NSValue valueWithCGRect:CGRectMake(CGRectGetWidth(config.ADFrame) - 54.0f, CGRectGetHeight(config.ADFrame) - 18.0f, 54.0f, 18.0f)]
-            
-        };
-        
-        self.adView = [[HBAdManager sharedManager] retriveAdViewWithPlacementID:self.placementID configuration:config scene:@"f600938967feb5"];
-//        [self.adView muteEnable:YES];
-        if (self.adView == nil) {
-            NSLog(@"show failed");
-            return;
-        }
-        
         HBNativeMessageStreamViewController *messageVc = [[HBNativeMessageStreamViewController alloc] initWithAdView:self.adView];
         [self.navigationController pushViewController:messageVc animated:YES];
-        
     } else if (self.drawBtn.isSelected) {
-        // Draw
-        HBNativeADConfiguration *config = [[HBNativeADConfiguration alloc] init];
-        config.ADFrame = self.view.bounds;
-        config.delegate = self;
-        config.renderingViewClass = [DMADView class];
-        config.rootViewController = self;
-        self.adView = [[HBAdManager sharedManager] retriveAdViewWithPlacementID:self.placementID configuration:config];
-//        [self.adView muteEnable:YES];
-        if (self.adView == nil) {
-            NSLog(@"show failed");
-            return;
-        }
-        self.adView.tag = 3333;
-        HBDrawViewController *drawVc = [[HBDrawViewController alloc] initWithAdView:self.adView];
-        [self.navigationController pushViewController:drawVc animated:YES];
-        
+        [self showDrawAd];
     } else {
         
-        HBNativeADConfiguration *config = [[HBNativeADConfiguration alloc] init];
-        config.ADFrame = CGRectMake(.0f, 100.0f, CGRectGetWidth(self.view.bounds), 350.0f);
-        config.mediaViewFrame = CGRectMake(0, 120.0f, CGRectGetWidth(self.view.bounds), 350.0f - 120.0f);
-        config.delegate = self;
-        config.sizeToFit = YES;
-        // 临时,只在 demo 用.
-        config.renderingViewClass = [DMADView class];
-        config.rootViewController = self;
-        config.context = @{
-            
-            kHBNativeAdConfigurationContextAdOptionsViewFrameKey:[NSValue valueWithCGRect:CGRectMake(CGRectGetWidth(self.view.bounds) - 43.0f, .0f, 43.0f, 18.0f)],
-            
-            kHBNativeAdConfigurationContextAdLogoViewFrameKey:[NSValue valueWithCGRect:CGRectMake(.0f, .0f, 54.0f, 18.0f)],
-            
-            kHBNativeAdConfigurationContextNetworkLogoViewFrameKey:[NSValue valueWithCGRect:CGRectMake(CGRectGetWidth(config.ADFrame) - 54.0f, CGRectGetHeight(config.ADFrame) - 18.0f, 54.0f, 18.0f)]
-            
-        };
+
+        HBNativeADConfiguration *config = [self getNativeADConfiguration];//:vc];
         
-        self.adView = [[HBAdManager sharedManager] retriveAdViewWithPlacementID:self.placementID configuration:config scene:@"f600938967feb5"];
-//        [self.adView muteEnable:YES];
-        if (self.adView == nil) {
-            NSLog(@"show failed");
-            return;
+        
+        HBNativeAdOffer *offer = [[HBAdManager sharedManager] getNativeAdOfferWithPlacementID:self.placementID];
+        
+//        HBNativeShowViewController *showVc = [[HBNativeShowViewController alloc] initWithAdView:nativeADView placementID:self.placementID offer:offer];
+        
+        HBNativeSelfRenderView *selfRenderView = [self getSelfRenderViewOffer:offer];
+        
+        HBNativeADView *nativeADView = [self getNativeADView:config offer:offer selfRenderView:selfRenderView];
+        
+        
+        [self prepareWithNativePrepareInfo:selfRenderView nativeADView:nativeADView];
+        
+        [offer rendererWithConfiguration:config selfRenderView:selfRenderView nativeADView:nativeADView];
+                
+        
+        HBNativeAdRenderType nativeAdRenderType = [nativeADView getCurrentNativeAdRenderType];
+        
+        if (nativeAdRenderType == HBNativeAdRenderExpress) {
+            NSLog(@"🔥--原生模板");
+            NSLog(@"🔥--原生模板广告宽高：%lf，%lf",offer.nativeAd.nativeExpressAdViewWidth,offer.nativeAd.nativeExpressAdViewHeight);
+        }else{
+            NSLog(@"🔥--原生自渲染");
         }
         
-//        [self.view addSubview:self.adView];
+        BOOL isVideoContents = [nativeADView isVideoContents];
+        NSLog(@"🔥--是否为原生视频广告：%d",isVideoContents);
         
-        HBNativeShowViewController *showVc = [[HBNativeShowViewController alloc] initWithAdView:self.adView placementID:self.placementID];
-        [self.navigationController pushViewController:showVc animated:YES];
-        
-        HBNativeADView *tempView = self.adView;
-        if ([self.adView isKindOfClass:[HBNativeADView class]] == NO) {
-            tempView = self.adView.subviews.firstObject;
+        if ([offer.adOfferInfo[@"network_firm_id"] integerValue] == 67) {
+            config.mediaViewFrame = CGRectMake(0, kNavigationBarHeight, kScreenW, 350);
         }
-        NSLog(@"获取广告平台id：%ld",tempView.networkFirmID);
         
+        self.renderView = selfRenderView;
+  
+        
+        HBNativeShowViewController * vc = [[HBNativeShowViewController alloc]initWithAdView:nativeADView placementID:_placementID offer:offer];
+ 
+
+       [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -480,6 +428,7 @@ static NSString *const kCallbackKey = @"request";
     if (self.adView && self.adView.superview) {
         [self.adView removeFromSuperview];
     }
+//    self.adView = nil;
 }
 
 - (void)showLog:(NSString *)logStr
@@ -488,7 +437,7 @@ static NSString *const kCallbackKey = @"request";
         NSString *logS = self.textView.text;
         NSString *log = nil;
         if (![logS isEqualToString:@""]) {
-            log = [NSString stringWithFormat:@"%@\n%@", logS, logStr];
+            log = [NSString stringWithFormat:@"%@\n\n%@", logS, logStr];
         } else {
             log = [NSString stringWithFormat:@"%@", logStr];
         }
@@ -501,67 +450,241 @@ static NSString *const kCallbackKey = @"request";
 {
     self.textView.text = @"";
 }
+
+#pragma mark - Show
+
+- (HBNativeADConfiguration *)getNativeADConfiguration{
+    HBNativeADConfiguration *config = [[HBNativeADConfiguration alloc] init];
+    config.ADFrame = CGRectMake(0, kNavigationBarHeight, kScreenW, 350);
+    config.mediaViewFrame = CGRectMake(0, kNavigationBarHeight + 150.0f, kScreenW, 350 - kNavigationBarHeight - 150);
+    
+    config.delegate = self;
+    config.sizeToFit = YES;
+    config.rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    config.context = @{
+        kHBNativeAdConfigurationContextAdOptionsViewFrameKey:[NSValue valueWithCGRect:CGRectMake(CGRectGetWidth(self.view.bounds) - 43.0f, .0f, 43.0f, 18.0f)],
+        kHBNativeAdConfigurationContextAdLogoViewFrameKey:[NSValue valueWithCGRect:CGRectMake(.0f, .0f, 54.0f, 18.0f)],
+        kHBNativeAdConfigurationContextNetworkLogoViewFrameKey:[NSValue valueWithCGRect:CGRectMake(CGRectGetWidth(config.ADFrame) - 54.0f, CGRectGetHeight(config.ADFrame) - 18.0f, 54.0f, 18.0f)]
+    };
+    return config;
+}
+
+- (HBNativeSelfRenderView *)getSelfRenderViewOffer:(HBNativeAdOffer *)offer{
+    
+    HBNativeSelfRenderView *selfRenderView = [[HBNativeSelfRenderView alloc]initWithOffer:offer];
+            
+    self.nativeSelfRenderView = selfRenderView;
+    
+ 
+    selfRenderView.backgroundColor = randomColor;
+    
+    return selfRenderView;
+}
+
+- (HBNativeADView *)getNativeADView:(HBNativeADConfiguration *)config offer:(HBNativeAdOffer *)offer selfRenderView:(HBNativeSelfRenderView *)selfRenderView{
+    
+    HBNativeADView *nativeADView = [[HBNativeADView alloc]initWithConfiguration:config currentOffer:offer placementID:self.placementID];
+    
+    
+    
+    UIView *mediaView = [nativeADView getMediaView];
+
+    
+    NSMutableArray *array = [@[selfRenderView.iconImageView,selfRenderView.titleLabel,selfRenderView.textLabel,selfRenderView.ctaLabel,selfRenderView.mainImageView] mutableCopy];
+    
+    if (mediaView) {
+        [array addObject:mediaView];
+    }
+    
+    [nativeADView registerClickableViewArray:array];
+    
+    nativeADView.backgroundColor = randomColor;
+
+    mediaView.backgroundColor = [UIColor redColor];
+    
+    selfRenderView.mediaView = mediaView;
+    
+    [selfRenderView addSubview:mediaView];
+    
+    [mediaView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.equalTo(selfRenderView);
+            make.top.equalTo(selfRenderView.mainImageView.mas_top);
+    }];
+
+    self.adView = nativeADView;
+    
+    return nativeADView;
+}
+
+- (void)prepareWithNativePrepareInfo:(HBNativeSelfRenderView *)selfRenderView nativeADView:(HBNativeADView *)nativeADView{
+    
+    HBNativePrepareInfo *info = [HBNativePrepareInfo loadPrepareInfo:^(HBNativePrepareInfo * _Nonnull prepareInfo) {
+        prepareInfo.textLabel = selfRenderView.textLabel;
+        prepareInfo.advertiserLabel = selfRenderView.advertiserLabel;
+        prepareInfo.titleLabel = selfRenderView.titleLabel;
+        prepareInfo.ratingLabel = selfRenderView.ratingLabel;
+        prepareInfo.iconImageView = selfRenderView.iconImageView;
+        prepareInfo.mainImageView = selfRenderView.mainImageView;
+        prepareInfo.logoImageView = selfRenderView.logoImageView;
+        prepareInfo.sponsorImageView = selfRenderView.sponsorImageView;
+        prepareInfo.dislikeButton = selfRenderView.dislikeButton;
+        prepareInfo.ctaLabel = selfRenderView.ctaLabel;
+        prepareInfo.mediaView = selfRenderView.mediaView;
+    }];
+    
+    [nativeADView prepareWithNativePrepareInfo:info];
+}
+
+#pragma mark - draw
+- (void)showDrawAd{
+    
+    // Draw
+    HBNativeADConfiguration *config = [[HBNativeADConfiguration alloc] init];
+    config.ADFrame = CGRectMake(0, kNavigationBarHeight, kScreenW, kScreenH - kNavigationBarHeight);;
+    config.delegate = self;
+    config.mediaViewFrame = CGRectMake(0, kNavigationBarHeight + 150.0f, kScreenW, kScreenH - kNavigationBarHeight - 150);
+    config.rootViewController = self;
+
+    
+    HBNativeAdOffer *offer = [[HBAdManager sharedManager] getNativeAdOfferWithPlacementID:self.placementID];
+    HBNativeSelfRenderView *selfRenderView = [[HBNativeSelfRenderView alloc]initWithOffer:offer];
+    self.nativeSelfRenderView = selfRenderView;
+    selfRenderView.backgroundColor = [UIColor redColor];
+    
+    HBNativeADView *nativeADView = [[HBNativeADView alloc]initWithConfiguration:config currentOffer:offer placementID:self.placementID];
+    
+    
+    UIView *mediaView = [nativeADView getMediaView];
+
+    NSMutableArray *array = [@[selfRenderView.iconImageView,selfRenderView.titleLabel,selfRenderView.textLabel,selfRenderView.ctaLabel,selfRenderView.mainImageView] mutableCopy];
+    
+    if (mediaView) {
+        [array addObject:mediaView];
+    }
+    [nativeADView registerClickableViewArray:array];
+    
+    mediaView.frame = CGRectMake(0, kNavigationBarHeight + 150.0f, kScreenW, kScreenH - kNavigationBarHeight - 150);
+//    mediaView.backgroundColor = randomColor;
+    [selfRenderView addSubview:mediaView];
+    
+    [selfRenderView addSubview:nativeADView.videoAdView];
+    [selfRenderView addSubview:nativeADView.dislikeDrawButton];
+    [selfRenderView addSubview:nativeADView.adLabel];
+    [selfRenderView addSubview:nativeADView.logoImageView];
+    [selfRenderView addSubview:nativeADView.logoADImageView];
+    
+    nativeADView.videoAdView.frame = CGRectMake(0, kNavigationBarHeight + 50.0f, kScreenW, kScreenH - kNavigationBarHeight - 50);
+    
+    nativeADView.dislikeDrawButton.frame = CGRectMake(kScreenW - 50, kNavigationBarHeight + 80.0f , 50,50);
+    
+    nativeADView.adLabel.frame = CGRectMake(kScreenW - 50, kNavigationBarHeight + 150.0f, kScreenW, 50);
+    
+    nativeADView.logoImageView.frame = CGRectMake(kScreenW - 50, kNavigationBarHeight + 200.0f, 50, 50);
+    nativeADView.logoADImageView.frame = CGRectMake(kScreenW - 50, kNavigationBarHeight + 250.0f, 50, 50);
+    
+    HBNativePrepareInfo *info = [HBNativePrepareInfo loadPrepareInfo:^(HBNativePrepareInfo * _Nonnull prepareInfo) {
+        prepareInfo.textLabel = selfRenderView.textLabel;
+        prepareInfo.advertiserLabel = selfRenderView.advertiserLabel;
+        prepareInfo.titleLabel = selfRenderView.titleLabel;
+        prepareInfo.ratingLabel = selfRenderView.ratingLabel;
+        prepareInfo.iconImageView = selfRenderView.iconImageView;
+        prepareInfo.mainImageView = selfRenderView.mainImageView;
+        prepareInfo.logoImageView = selfRenderView.logoImageView;
+        prepareInfo.sponsorImageView = selfRenderView.sponsorImageView;
+        prepareInfo.dislikeButton = selfRenderView.dislikeButton;
+        prepareInfo.ctaLabel = selfRenderView.ctaLabel;
+        prepareInfo.mediaView = mediaView;
+    }];
+    [nativeADView prepareWithNativePrepareInfo:info];
+    
+    
+    [offer rendererWithConfiguration:config selfRenderView:selfRenderView nativeADView:nativeADView];
+    
+    HBDrawViewController *drawVc = [[HBDrawViewController alloc] initWithAdView:nativeADView];
+    
+    [self.navigationController pushViewController:drawVc animated:YES];
+
+    
+    
+}
+
 #pragma mark - delegate with extra
 - (void)didStartLoadingADSourceWithPlacementID:(NSString *)placementID extra:(NSDictionary*)extra{
     
-    NSLog(@"广告源--AD--开始--ATRewardVideoViewController::didStartLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra);
+    NSLog(@"广告源--AD--开始--ATNativeViewController::didStartLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra);
     
 //    [self showLog:[NSString stringWithFormat:@"didStartLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 - (void)didFinishLoadingADSourceWithPlacementID:(NSString *)placementID extra:(NSDictionary*)extra{
     
-    NSLog(@"广告源--AD--完成--ATRewardVideoViewController::didFinishLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra);
+    NSLog(@"广告源--AD--完成--ATNativeViewController::didFinishLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra);
     
 //    [self showLog:[NSString stringWithFormat:@"didFinishLoadingADSourceWithPlacementID:%@---extra:%@", placementID,extra]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 - (void)didFailToLoadADSourceWithPlacementID:(NSString*)placementID extra:(NSDictionary*)extra error:(NSError*)error{
-    NSLog(@"广告源--AD--失败--ATRewardVideoViewController::didFailToLoadADSourceWithPlacementID:%@---error:%@", placementID,error);
+    NSLog(@"广告源--AD--失败--ATNativeViewController::didFailToLoadADSourceWithPlacementID:%@---error:%@", placementID,error);
     
 //    [self showLog:[NSString stringWithFormat:@"didFailToLoadADSourceWithPlacementID:%@--%@", placementID],error];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 // bidding
 - (void)didStartBiddingADSourceWithPlacementID:(NSString *)placementID extra:(NSDictionary*)extra{
     
-    NSLog(@"广告源--bid--开始--ATRewardVideoViewController::didStartBiddingADSourceWithPlacementID:%@---extra:%@", placementID,extra);
+    NSLog(@"广告源--bid--开始--ATNativeViewController::didStartBiddingADSourceWithPlacementID:%@---extra:%@", placementID,extra);
     
 //    [self showLog:[NSString stringWithFormat:@"didStartBiddingADSourceWithPlacementID:%@---extra:%@", placementID,extra]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 - (void)didFinishBiddingADSourceWithPlacementID:(NSString *)placementID extra:(NSDictionary*)extra{
     
-    NSLog(@"广告源--bid--完成--ATRewardVideoViewController::didFinishBiddingADSourceWithPlacementID:%@--extra:%@", placementID,extra);
+    NSLog(@"广告源--bid--完成--ATNativeViewController::didFinishBiddingADSourceWithPlacementID:%@--extra:%@", placementID,extra);
     
 //    [self showLog:[NSString stringWithFormat:@"didFinishBiddingADSourceWithPlacementID:%@---extra:%@", placementID,extra]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 - (void)didFailBiddingADSourceWithPlacementID:(NSString*)placementID extra:(NSDictionary*)extra error:(NSError*)error{
     
-    NSLog(@"广告源--bid--失败--ATRewardVideoViewController::didFailBiddingADSourceWithPlacementID:%@--error:%@", placementID,error);
+    NSLog(@"广告源--bid--失败--ATNativeViewController::didFailBiddingADSourceWithPlacementID:%@--error:%@", placementID,error);
     
 //    [self showLog:[NSString stringWithFormat:@"didFailBiddingADSourceWithPlacementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) didFinishLoadingADWithPlacementID:(NSString *)placementID {
     NSLog(@"HBNativeViewController:: didFinishLoadingADWithPlacementID:%@", placementID);
     
     [self showLog:[NSString stringWithFormat:@"didFinishLoading:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) didFailToLoadADWithPlacementID:(NSString *)placementID error:(NSError *)error {
     NSLog(@"HBNativeViewController:: didFailToLoadADWithPlacementID:%@ error:%@", placementID, error);
     
     [self showLog:[NSString stringWithFormat:@"didFailToLoad:%@ errorCode:%ld", placementID, (long)error.code]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 #pragma mark - delegate with extra
@@ -569,50 +692,65 @@ static NSString *const kCallbackKey = @"request";
     NSLog(@"HBNativeViewController:: didStartPlayingVideoInAdView:placementID:%@with extra: %@", placementID,extra);
     
     [self showLog:[NSString stringWithFormat:@"didStartPlayingVideoInAdView:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) didEndPlayingVideoInAdView:(HBNativeADView*)adView placementID:(NSString*)placementID extra:(NSDictionary *)extra{
-    NSLog(@"HBNativeViewController:: didEndPlayingVideoInAdView:placementID:%@", placementID);
+    NSLog(@"HBNativeViewController:: didEndPlayingVideoInAdView:placementID:%@ extra: %@", placementID,extra);
     
     [self showLog:[NSString stringWithFormat:@"didEndPlayingVideoInAdView:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) didClickNativeAdInAdView:(HBNativeADView*)adView placementID:(NSString*)placementID extra:(NSDictionary *)extra{
     NSLog(@"HBNativeViewController:: didClickNativeAdInAdView:placementID:%@ with extra: %@", placementID,extra);
     
     [self showLog:[NSString stringWithFormat:@"didClickNativeAdInAdView:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 - (void) didDeepLinkOrJumpInAdView:(HBNativeADView *)adView placementID:(NSString *)placementID extra:(NSDictionary *)extra result:(BOOL)success {
     NSLog(@"HBNativeViewController:: didDeepLinkOrJumpInAdView:placementID:%@ with extra: %@, success:%@", placementID,extra, success ? @"YES" : @"NO");
     
     [self showLog:[NSString stringWithFormat:@"HBNativeViewController:: didDeepLinkOrJumpInAdView:%@, success:%@", placementID, success ? @"YES" : @"NO"]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) didShowNativeAdInAdView:(HBNativeADView*)adView placementID:(NSString*)placementID extra:(NSDictionary *)extra{
     NSLog(@"HBNativeViewController:: didShowNativeAdInAdView:placementID:%@ with extra: %@", placementID,extra);
-    adView.mainImageView.hidden = [adView isVideoContents];
+    
+    self.nativeSelfRenderView.mainImageView.hidden = [adView isVideoContents];
     
     [self showLog:[NSString stringWithFormat:@"didShowNativeAdInAdView:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) didEnterFullScreenVideoInAdView:(HBNativeADView*)adView placementID:(NSString*)placementID extra:(NSDictionary *)extra{
     NSLog(@"HBNativeViewController:: didEnterFullScreenVideoInAdView:placementID:%@", placementID);
     
     [self showLog:[NSString stringWithFormat:@"didEnterFullScreenVideoInAdView:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) didExitFullScreenVideoInAdView:(HBNativeADView*)adView placementID:(NSString*)placementID extra:(NSDictionary *)extra{
     NSLog(@"HBNativeViewController:: didExitFullScreenVideoInAdView:placementID:%@", placementID);
     
     [self showLog:[NSString stringWithFormat:@"didExitFullScreenVideoInAdView:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) didTapCloseButtonInAdView:(HBNativeADView*)adView placementID:(NSString*)placementID extra:(NSDictionary *)extra {
@@ -620,65 +758,83 @@ static NSString *const kCallbackKey = @"request";
     
     [self.adView removeFromSuperview];
     self.adView = nil;
-    
+    adView = nil;
     [self showLog:[NSString stringWithFormat:@"didTapCloseButtonInAdView:placementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 - (void)didCloseDetailInAdView:(HBNativeADView *)adView placementID:(NSString *)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBNativeViewController:: didCloseDetailInAdView:placementID:%@ extra:%@", placementID, extra);
 
     [self showLog:[NSString stringWithFormat:@"didCloseDetailInAdView:placementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) nativeAdDidClickInAdViewForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBNativeViewController:: nativeAdDidClickInAdViewForPlacementID:placementID:%@ extra:%@", placementID, extra);
     
     [self showLog:[NSString stringWithFormat:@"nativeAdDidClickInAdViewForPlacementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) nativeAdDeepLinkOrJumpForPlacementID:(NSString*)placementID extra:(NSDictionary*)extra result:(BOOL)success {
     NSLog(@"HBNativeViewController:: nativeAdDeepLinkOrJumpForPlacementID:placementID:%@ extra:%@", placementID, extra);
     
     [self showLog:[NSString stringWithFormat:@"nativeAdDeepLinkOrJumpForPlacementID:placementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) nativeAdDidStartPlayingVideoInAdViewForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBNativeViewController:: nativeAdDidStartPlayingVideoInAdViewForPlacementID:placementID:%@ extra:%@", placementID, extra);
     
     [self showLog:[NSString stringWithFormat:@"nativeAdDidStartPlayingVideoInAdViewForPlacementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) nativeAdDidEndPlayingVideoInAdViewForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBNativeViewController:: nativeAdDidEndPlayingVideoInAdViewForPlacementID:placementID:%@ extra:%@", placementID, extra);
     
     [self showLog:[NSString stringWithFormat:@"nativeAdDidEndPlayingVideoInAdViewForPlacementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) nativeAdDidEnterFullScreenVideoInAdViewForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBNativeViewController:: nativeAdDidEnterFullScreenVideoInAdViewForPlacementID:placementID:%@ extra:%@", placementID, extra);
     
     [self showLog:[NSString stringWithFormat:@"nativeAdDidEnterFullScreenVideoInAdViewForPlacementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) nativeAdDidExitFullScreenVideoInAdViewForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"nativeAdDidExitFullScreenVideoInAdViewForPlacementID:%@", placementID);
     
     [self showLog:[NSString stringWithFormat:@"nativeAdDidExitFullScreenVideoInAdViewForPlacementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 -(void) nativeAdDidTapCloseButtonInAdViewForPlacementID:(NSString*)placementID extra:(NSDictionary *)extra {
     NSLog(@"HBNativeViewController:: nativeAdDidTapCloseButtonInAdViewForPlacementID:placementID:%@ extra:%@", placementID, extra);
     
     [self showLog:[NSString stringWithFormat:@"nativeAdDidTapCloseButtonInAdViewForPlacementID:%@", placementID]];
-    [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suspendedBtn recordWithPlacementId:self.placementID protocol:NSStringFromSelector(_cmd)];
+    });
 }
 
 
@@ -705,6 +861,13 @@ static NSString *const kCallbackKey = @"request";
             NSLog(@"点击展示");
             [weakSelf showAd];
         }];
+        
+        if (![NSStringFromClass([self class]) containsString:@"Auto"]) {
+            [_footView.loadBtn setTitle:@"Load Native AD" forState:UIControlStateNormal];
+            [_footView.readyBtn setTitle:@"Is Native AD Ready" forState:UIControlStateNormal];
+            [_footView.showBtn setTitle:@"Show Native AD" forState:UIControlStateNormal];
+        }
+        
     }
     return _footView;
 }
@@ -730,7 +893,7 @@ static NSString *const kCallbackKey = @"request";
         _drawBtn.tag = 1;
         _drawBtn.backgroundColor = [UIColor whiteColor];
         _drawBtn.layer.borderWidth = kScaleW(5);
-        _drawBtn.modelLabel.text = @"draw";
+        _drawBtn.modelLabel.text = @"Vertical-Draw Video";
         _drawBtn.image.image = [UIImage imageNamed:@"Vertical Draw video"];
         [_drawBtn addTarget:self action:@selector(changeModel:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -761,7 +924,7 @@ static NSString *const kCallbackKey = @"request";
         __weak typeof (self) weakSelf = self;
         [_menuView setSelectMenu:^(NSString * _Nonnull selectMenu) {
             weakSelf.placementID = weakSelf.placementIDs[selectMenu];
-            NSLog(@"🚗select placementId:%@", weakSelf.placementID);
+            NSLog(@"select placementId:%@", weakSelf.placementID);
         }];
         [_menuView setSelectSubMenu:^(NSString * _Nonnull selectSubMenu) {
             weakSelf.nativeStr = selectSubMenu;
@@ -806,6 +969,4 @@ static NSString *const kCallbackKey = @"request";
     return _suspendedBtn;
 }
 
-
-#endif
 @end

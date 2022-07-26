@@ -31,10 +31,11 @@ NSString *const kOguryPlacement = @"Ogury";
 NSString *const kHeliumPlacement = @"Helium";
 NSString *const kKidozPlacement = @"Kidoz";
 NSString *const kMyTargetPlacement = @"MyTarget";
+NSString *const kYandexPlacement = @"Yandex";
 
 static NSString *const kPlacement0ID = @"b5ad9ba61dcb39";
 static NSString *const kInmobiPlacementID = @"b5b44a03522f92";
-static NSString *const kMintegralPlacementID = @"b5b44a07fc3bf6";
+static NSString *const kMintegralPlacementID = @"b62b02353848af";
 static NSString *const kMintegralHeaderBiddingPlacementID = @"b5d13341598199";
 static NSString *const kFacebookPlacementID = @"b5b44a02112383";
 static NSString *const kFacebookHeaderBiddingPlacementID = @"b5d133438158c6";
@@ -64,7 +65,7 @@ static NSString *const kHeliumPlacementID = @"b5f583ea323756";
 static NSString *const kKidozPlacementID = @"b5feaa2c0a6191";
 static NSString *const kMyTargetPlacementID = @"b5feaa2f32f161";
 
-
+static NSString * const kYandexPlacementID = @"b62da7ecb6d680";
 
 
 @interface HBRewardVideoViewController () <HBAdLoadingDelegate, HBRewardedVideoDelegate>
@@ -107,6 +108,7 @@ static NSString *const kMyTargetPlacementID = @"b5feaa2f32f161";
 - (NSDictionary<NSString *,NSString *> *)placementIDs{
     
     _placementIDs = @{
+                    kYandexPlacement:kYandexPlacementID,
                       kMintegralPlacement:kMintegralPlacementID,
                       kHeaderBiddingPlacement:kMintegralHeaderBiddingPlacementID,
                       kAllPlacementName:kAllPlacementID,

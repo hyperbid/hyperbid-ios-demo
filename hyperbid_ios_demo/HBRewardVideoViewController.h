@@ -12,6 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString *const kYandexPlacement;
+
 @interface HBRewardVideoViewController : UIViewController
 
 @property (copy, nonatomic) NSString *placementID;
